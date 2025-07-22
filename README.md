@@ -5,5 +5,6 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 ## Projects
 
 - [Project 1: Quote Generator](./quoteGenerator/index.html)
+- [Project 2: Proverb Generator](./proverbsGenerator/index.html)
 
 More projects will be added soon!
