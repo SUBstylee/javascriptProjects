@@ -4,11 +4,11 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
 ## Projects
 
-- [Project 1: Quote Generator](./quoteGenerator/index.html)
+- [Project 1: Quote Generator](./0001quoteGenerator/index.html)
 
   Simple quote generator. Using the ... API.
 
-- [Project 2: Proverb Generator](./proverbsGenerator/index.html)
+- [Project 2: Proverb Generator](./0002proverbsGenerator/index.html)
 
   Another version of the quote generator, but for proverbs in English and Chinese.
 
