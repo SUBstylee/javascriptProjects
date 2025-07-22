@@ -17,7 +17,7 @@ body {
 	justify-content: center;
 }
 
-.quote-container {
+.proverb-container {
 	width: auto;
 	max-width: 900px;
 	padding: 20px 30px;
@@ -26,12 +26,8 @@ body {
 	box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
-.quote-text {
+.proverb-text {
 	font-size: 2.75rem;
-}
-
-.long-quote {
-	font-size: 2rem;
 }
 
 .fa-quote-left,
@@ -39,11 +35,8 @@ body {
 	font-size: 3rem;
 }
 
-.quote-author {
+.proverb-chinese {
 	margin-top: 15px;
-	font-size: 2rem;
-	font-weight: 400;
-	font-style: italic;
 }
 
 .button-container {
@@ -74,11 +67,29 @@ button:active {
 	box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
 }
 
+.loader {
+	border: 16px solid #ccc;
+	border-top: 16px solid #333;
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 @media screen and (max-width: 1000px) {
 	.quote-container {
 		margin: auto 10px;
 	}
-	.quote-text {
+	.proverb-text {
 		font-size: 2.5rem;
 	}
 }
