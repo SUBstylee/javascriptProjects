@@ -12,10 +12,16 @@ body {
 }
 
 h1 {
-	text-align: center;
 	margin: 25px 0 15px;
 	font-size: 40px;
 	letter-spacing: 5px;
+}
+
+h1,
+h6 {
+	text-align: center;
+	margin: 25px 0 15px;
+	letter-spacing: 2px;
 }
 
 .loader {
