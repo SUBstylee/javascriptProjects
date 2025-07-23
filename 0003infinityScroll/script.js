@@ -4,7 +4,8 @@ const loader = document.getElementById('loader');
 let photosArray = [];
 
 const count = 2;
-const apiKey = 'sbf_CUzUiveoYxKocmpY29R_f0JveEBu3JqnJse-chk';
+// Free tier api key, limited to 50 images an hour
+const apiKey = 'zJhX_7UghT1S6PhuRrY3XALULJStQqmngoCcunrrY2k';
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
 
 function setAttributes(element, attributes) {
