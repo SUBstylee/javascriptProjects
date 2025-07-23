@@ -5,6 +5,7 @@ let ready = false;
 let imagesLoaded = 0;
 let totalImages = 0;
 let photosArray = [];
+let initialLoad = true;
 
 const count = 2;
 // Free tier api key, limited to 50 images an hour
@@ -16,6 +17,8 @@ const imageLoaded = () => {
 	if (imagesLoaded === totalImages) {
 		ready = true;
 		loader.hidden = true;
+		initialLoad = false;
+		count = 5;
 	}
 };
 
