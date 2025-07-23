@@ -12,4 +12,8 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
   Another version of the quote generator, but for proverbs in English and Chinese.
 
+- [Project 3: Infinite Scroll](./0003infiniteScroll/index.html)
+
+  Infinite Scroll for images using the Unsplash API. Note it is a free tier, so limited to 50 images and hour.
+
   ### More projects will be added soon!
