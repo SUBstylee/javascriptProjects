@@ -6,14 +6,18 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
 - [Project 1: Quote Generator](./0001quoteGenerator/index.html)
 
-  Simple quote generator. Using the ... API.
+  Simple quote generator. Using a custom API.
 
 - [Project 2: Proverb Generator](./0002proverbsGenerator/index.html)
 
   Another version of the quote generator, but for proverbs in English and Chinese.
 
-- [Project 3: Infinite Scroll](./0003infiniteScroll/index.html)
+- [Project 3: Infinite Scroll](./0003infinityScroll/index.html)
 
   Infinite Scroll for images using the Unsplash API. Note it is a free tier, so limited to 50 images and hour.
+
+- [Project 4: Picture In Picture](./0004pictureInPicture/index.html)
+
+  Picture In Picture, using screen sharing to make a resizable PiP from a tab, application, or full screen.
 
   ### More projects will be added soon!
