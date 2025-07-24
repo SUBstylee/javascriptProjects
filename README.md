@@ -14,7 +14,7 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
 - [Project 3: Infinite Scroll](./0003infinityScroll/index.html)
 
-  Infinite Scroll for images using the Unsplash API. Note it is a free tier, so limited to 50 images and hour.
+  Infinite Scroll for images using the Unsplash API. Note it is a free tier, so limited to 50 images an hour.
 
 - [Project 4: Picture In Picture](./0004pictureInPicture/index.html)
 
