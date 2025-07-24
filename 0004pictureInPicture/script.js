@@ -8,3 +8,7 @@ const split = () => {
 const selection = () => {
 	console.log('share type has been selected');
 };
+
+const handler = () => {
+	console.log('handler has been chosen');
+};
