@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	text-align: center;
+	background-color: #eeeeee;
+	background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%237b7d69' fill-opacity='0.36' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+	font-family: Raleway, sans-serif;
+	font-weight: 700;
+	text-align: center;
+	color: #3d3d3d;
+}
+
+h1,
+h2 {
+	margin-bottom: 20px;
+}
+
+hr {
+	height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8c8c inset;
+}
