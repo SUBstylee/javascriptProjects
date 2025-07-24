@@ -12,3 +12,5 @@ const selection = () => {
 const handler = () => {
 	console.log('handler has been chosen');
 };
+
+// run on load
