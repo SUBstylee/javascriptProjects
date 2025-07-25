@@ -20,4 +20,12 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
   Picture In Picture, using screen sharing to make a resizable PiP from a tab, application, or screen.
 
+- [Project 4: Picture In Picture](./0004pictureInPicture/index.html)
+
+  Picture In Picture, using screen sharing to make a resizable PiP from a tab, application, or screen.
+
+- [Project 5: Joke Teller](./0005jokeTeller/index.html)
+
+  Uses a joke API, and TTS to read out joke to user.
+
   ### More projects will be added soon!
