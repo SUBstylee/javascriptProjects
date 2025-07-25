@@ -18,6 +18,6 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
 - [Project 4: Picture In Picture](./0004pictureInPicture/index.html)
 
-  Picture In Picture, using screen sharing to make a resizable PiP from a tab, application, or full screen.
+  Picture In Picture, using screen sharing to make a resizable PiP from a tab, application, or screen.
 
   ### More projects will be added soon!
