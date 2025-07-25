@@ -1,4 +1,4 @@
-const btn = document.getElementById('btn');
+const btn = document.getElementById('button');
 const audioElement = document.getElementById('audio');
 
 // VoiceRSS Javascript SDK
@@ -105,8 +105,14 @@ const VoiceRSS = {
 	},
 };
 
+const toggleBtn = () => {
+	btn.disabled = !btn.disabled;
+	btn.innerText === 'Wait...'
+		? (btn.innerText = 'Tell Me A Joke')
+		: (btn.innerText = 'Wait...');
+};
+
 const tellMe = (joke) => {
-	console.log(joke);
 	VoiceRSS.speech({
 		key: '10a93fc939e649ba8ae35bade4934c99',
 		src: joke,
@@ -119,6 +125,7 @@ const tellMe = (joke) => {
 };
 
 const getJokes = async () => {
+	toggleBtn();
 	let joke = '';
 	const apiUrl = 'https://v2.jokeapi.dev/joke/Any';
 	try {
@@ -135,4 +142,5 @@ const getJokes = async () => {
 	}
 };
 
-getJokes();
+btn.addEventListener('click', getJokes);
+audioElement.addEventListener('ended', toggleBtn);
