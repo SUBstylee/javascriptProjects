@@ -26,6 +26,6 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
 - [Project 5: Joke Teller](./0005jokeTeller/index.html)
 
-  Uses a joke API, and TTS to read out joke to user.
+  Uses the JokeAPI, and VoiceRSS TTS API to read out jokes to users.
 
   ### More projects will be added soon!
