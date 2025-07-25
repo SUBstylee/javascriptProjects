@@ -5,18 +5,27 @@ const selectMediaStream = async () => {
 	try {
 		const mediaStream = await navigator.mediaDevices.getDisplayMedia();
 		videoElement.srcObject = mediaStream;
-		videoElement.onloadedmetadata = () => {
-			videoElement.play();
-		};
+		return new Promise((resolve) => {
+			videoElement.onloadedmetadata = async () => {
+				await videoElement.play();
+				resolve();
+			};
+		});
 	} catch (error) {
-		// error catching
+		console.log('Something went wrong: ', error);
 	}
 };
 
 btn.addEventListener('click', async () => {
 	btn.disabled = true;
+	btn.innerText = 'Loading...';
+	await selectMediaStream();
+	if (videoElement.readyState < 2) {
+		btn.disabled = false;
+		btn.innerText = 'Start';
+		return;
+	}
 	await videoElement.requestPictureInPicture();
 	btn.disabled = false;
+	btn.innerText = 'Start';
 });
-
-selectMediaStream();
