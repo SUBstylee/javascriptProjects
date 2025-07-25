@@ -29,3 +29,11 @@ btn.addEventListener('click', async () => {
 	btn.disabled = false;
 	btn.innerText = 'Start';
 });
+
+videoElement.addEventListener('leavepictureinpicture', () => {
+	const stream = videoElement.srcObject;
+	if (stream) {
+		stream.getTracks().forEach((track) => track.stop());
+		videoElement.srcObject = null;
+	}
+});
