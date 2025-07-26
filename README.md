@@ -32,4 +32,4 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
   A simple landing page with dark and light mode toggle.
 
-  ### More projects will be added soon!
+  ### More projects will be added soon
