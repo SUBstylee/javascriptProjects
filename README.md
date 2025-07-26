@@ -28,4 +28,8 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
   Uses the JokeAPI, and VoiceRSS TTS API to read out jokes to users.
 
+- [Project 6: Light & Dark Mode](./0006lightDarkMode/index.html)
+
+  A simple landing page with dark and light mode toggle.
+
   ### More projects will be added soon!
