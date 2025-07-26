@@ -6,33 +6,29 @@ const image2 = document.getElementById('image2');
 const image3 = document.getElementById('image3');
 const textBox = document.getElementById('text-box');
 
-const imageMode = (color) => {
+const themeMode = (color) => {
+	const darkMode = color === 'dark';
 	image1.src = `img/undraw_proud_coder_${color}.svg`;
 	image2.src = `img/undraw_conceptual_idea_${color}.svg`;
 	image3.src = `img/undraw_feeling_proud_${color}.svg`;
-};
-
-const darkMode = () => {
-	nav.style.backgroundColor = 'rgb(0 0 0 / 50%)';
-	textBox.style.backgroundColor = 'rgb(255 255 255 / 50%)';
-	toggleIcon.children[0].textContent = 'Dark Mode';
-	toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon');
-	imageMode('dark');
-};
-
-const lightMode = () => {
-	nav.style.backgroundColor = 'rgb(255 255 255 / 50%)';
-	textBox.style.backgroundColor = 'rgb(0 0 0 / 50%)';
-	toggleIcon.children[0].textContent = 'Light Mode';
-	toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun');
-	imageMode('light');
+	toggleIcon.children[0].textContent = darkMode ? 'Dark Mode' : 'Light Mode';
+	toggleIcon.children[1].classList.replace(
+		darkMode ? 'fa-sun' : 'fa-moon',
+		darkMode ? 'fa-moon' : 'fa-sun',
+	);
+	nav.style.backgroundColor = darkMode
+		? 'rgb(0 0 0 / 50%)'
+		: 'rgb(255 255 255 / 50%)';
+	textBox.style.backgroundColor = darkMode
+		? 'rgb(255 255 255 / 50%)'
+		: 'rgb(0 0 0 / 50%)';
 };
 
 const switchTheme = (e) => {
 	const themeColor = e.target.checked ? 'dark' : 'light';
 	document.documentElement.setAttribute('data-theme', themeColor);
 	localStorage.setItem('theme', themeColor);
-	themeColor === 'dark' ? darkMode() : lightMode();
+	themeMode(themeColor);
 };
 
 const selectedTheme = () => {
@@ -40,6 +36,7 @@ const selectedTheme = () => {
 	if (theme === 'dark') {
 		toggleSwitch.checked = true;
 		document.documentElement.setAttribute('data-theme', 'dark');
+		themeMode(theme);
 	}
 	return;
 };
