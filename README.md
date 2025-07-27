@@ -32,4 +32,8 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
   A simple landing page with dark and light mode toggle.
 
+- [Project 7: Animated Landing Page](./0007animatedLandingPage/index.html)
+
+  A simple landing page with animations.
+
   ### More projects will be added soon
