@@ -34,6 +34,6 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
 - [Project 7: Animated Landing Page](./0007animatedLandingPage/index.html)
 
-  A simple landing page with animations.
+  A simple landing page with animations, and Tailwind CSS.
 
   ### More projects will be added soon
