@@ -41,6 +41,8 @@ body {
 
 .overlay-slide-left {
 	transition: all 0.8s ease-in-out;
+	-o-transition-delay: 0.5s;
+	transition-delay: 0.5s;
 	transform: translateX(-100vw);
 }
 
@@ -157,7 +159,7 @@ nav li:nth-of-type(5) {
 	animation: slide-out 0.3s linear 0.3s both;
 }
 
-.slide-out-3 {
+.slide-out-4 {
 	animation: slide-out 0.3s linear 0.2s both;
 }
 
