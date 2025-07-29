@@ -54,7 +54,6 @@ loadSong(songs[currSongIndex]);
 const updateProgressBar = (e) => {
 	if (isPlaying) {
 		const { duration, currentTime } = e.srcElement;
-		console.log(duration, currentTime);
 		const progressPercent = (currentTime / duration) * 100;
 		progress.style.width = `${progressPercent}%`;
 		const durationMinutes = Math.floor(duration / 60);
@@ -69,6 +68,14 @@ const updateProgressBar = (e) => {
 	}
 };
 
+const setProgressBar = (e) => {
+	const width = progressContainer.offsetWidth;
+	const clickX = e.offsetX;
+	const { duration } = music;
+	music.currentTime = (clickX / width) * duration;
+};
+
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
 music.addEventListener('timeupdate', updateProgressBar);
+progressContainer.addEventListener('click', setProgressBar);
