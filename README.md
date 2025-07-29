@@ -40,4 +40,8 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
   An animated navigation.
 
+- [Project 9: Music Player](./0009musicPlayer/index.html)
+
+  Music player that allows Play, Pause, Next Track, Previous Track, and Seeking by clicking on the progress bar.
+
   ### More projects will be added soon
