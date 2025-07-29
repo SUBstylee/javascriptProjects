@@ -54,4 +54,21 @@ const loadSong = (song) => {
 	img.src = `img/${song.name}.jpg`;
 };
 
-loadSong(songs[0]);
+let currSongIndex = 0;
+
+const prevSong = () => {
+	currSongIndex === 0 ? (currSongIndex = songs.length - 1) : currSongIndex--;
+	loadSong(songs[currSongIndex]);
+	playSong();
+};
+
+const nextSong = () => {
+	currSongIndex === songs.length - 1 ? (currSongIndex = 0) : currSongIndex++;
+	loadSong(songs[currSongIndex]);
+	playSong();
+};
+
+loadSong(songs[currSongIndex]);
+
+prevBtn.addEventListener('click', prevSong);
+nextBtn.addEventListener('click', nextSong);
