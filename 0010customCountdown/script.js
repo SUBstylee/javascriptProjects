@@ -1,6 +1,18 @@
 const inputContainer = document.getElementById('input-container');
-const coundownForm = document.getElementById('coundown-form');
+const countdownForm = document.getElementById('countdown-form');
 const dateEl = document.getElementById('date-picker');
+
+let countdownTitle = '';
+let countdownDate = '';
 
 const today = new Date().toISOString().split('T')[0];
 dateEl.setAttribute('min', today);
+
+const updateCountdown = (e) => {
+	e.preventDefault();
+	countdownTitle = e.srcElement[0].value;
+	countdownDate = e.srcElement[1].value;
+	console.log(countdownTitle, countdownDate);
+};
+
+countdownForm.addEventListener('submit', updateCountdown);
