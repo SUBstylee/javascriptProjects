@@ -14,7 +14,8 @@ const completeBtn = document.getElementById('complete-btn');
 let countdownTitle = '';
 let countdownDate = '';
 let countdownValue = Date;
-let coundownActive;
+let countdownActive;
+let savedCountdown;
 
 const second = 1000;
 const minute = second * 60;
@@ -25,7 +26,7 @@ const today = new Date().toISOString().split('T')[0];
 dateEl.setAttribute('min', today);
 
 const updateDOM = () => {
-	coundownActive = setInterval(() => {
+	countdownActive = setInterval(() => {
 		const now = new Date().getTime();
 		const distance = countdownValue - now;
 
@@ -37,7 +38,7 @@ const updateDOM = () => {
 
 		if (distance < 0) {
 			countdownEl.hidden = true;
-			clearInterval(coundownActive);
+			clearInterval(countdownActive);
 			completeElInfo.textContent = `${countdownTitle} finished on ${countdownDate}`;
 			completeEl.hidden = false;
 		} else {
@@ -56,18 +57,37 @@ const updateCountdown = (e) => {
 	e.preventDefault();
 	countdownTitle = e.srcElement[0].value;
 	countdownDate = e.srcElement[1].value;
+	savedCountdown = {
+		title: countdownDate,
+		date: countdownDate,
+	};
+	localStorage.setItem('countdown', JSON.stringify(savedCountdown));
 	countdownValue = new Date(countdownDate).getTime();
 	updateDOM();
 };
 
 const reset = () => {
+	localStorage.removeItem('countdown');
 	countdownEl.hidden = true;
 	completeEl.hidden = true;
 	inputContainer.hidden = false;
-	clearInterval(coundownActive);
+	clearInterval(countdownActive);
 	countdownTitle = '';
 	countdownDate = '';
 };
+
+const restorePrevCountdown = () => {
+	if (localStorage.getItem('countdown')) {
+		inputContainer.hidden = true;
+		savedCountdown = JSON.parse(localStorage.getItem('countdown'));
+		countdownTitle = savedCountdown.title;
+		countdownDate = savedCountdown.date;
+		countdownValue = new Date(countdownDate).getTime();
+		updateDOM();
+	}
+};
+
+restorePrevCountdown();
 
 countdownForm.addEventListener('submit', updateCountdown);
 countdownBtn.addEventListener('click', reset);
