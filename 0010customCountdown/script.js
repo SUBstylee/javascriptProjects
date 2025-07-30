@@ -48,4 +48,13 @@ const updateCountdown = (e) => {
 	updateDOM();
 };
 
+const reset = () => {
+	countdownEl.hidden = true;
+	inputContainer.hidden = false;
+	clearInterval(coundownActive);
+	countdownTitle = '';
+	countdownDate = '';
+};
+
 countdownForm.addEventListener('submit', updateCountdown);
+countdownBtn.addEventListener('click', reset);
