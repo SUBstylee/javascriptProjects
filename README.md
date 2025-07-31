@@ -48,4 +48,8 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
   Countdown timer that accepts form input from the user to countdown to a future date. Uses localstorage to persist countdown between sessions.
 
+- [Project 11: Book Keeper](./0011bookKeeper/index.html)
+
+  A URL bookmark index, that also uses favicons for visual representation. Uses localstorage to persist bookmarks between sessions.
+
   ### More projects will be added soon
