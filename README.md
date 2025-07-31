@@ -44,4 +44,8 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
   Music player that allows Play, Pause, Next Track, Previous Track, and Seeking by clicking on the progress bar.
 
+- [Project 10: Custom Countdown](./0010customCountdown/index.html)
+
+  Countdown timer that accepts form input from the user to countdown to a future date. Uses localstorage to persist countdown between sessions.
+
   ### More projects will be added soon
