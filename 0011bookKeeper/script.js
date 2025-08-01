@@ -13,3 +13,6 @@ const toggleModal = () => {
 
 showModalBtn.addEventListener('click', toggleModal);
 closeModalBtn.addEventListener('click', toggleModal);
+window.addEventListener('click', (e) => {
+	e.target === modal ? modal.classList.remove('show-modal') : false;
+});
