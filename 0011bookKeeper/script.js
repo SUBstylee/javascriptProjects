@@ -4,6 +4,7 @@ const closeModalBtn = document.getElementById('close-modal');
 const bookmarkForm = document.getElementById('bookmark-form');
 const websiteNameEl = document.getElementById('website-name');
 const websiteUrlEl = document.getElementById('website-url');
+const bookmarksContainer = document.getElementById('bookmarks-container');
 
 const toggleModal = () => {
 	modal.classList.toggle('show-modal');
