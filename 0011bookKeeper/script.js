@@ -8,6 +8,7 @@ const bookmarksContainer = document.getElementById('bookmarks-container');
 
 const toggleModal = () => {
 	modal.classList.toggle('show-modal');
+	if (modal.classList.contains('show-modal')) websiteNameEl.focus();
 };
 
 showModalBtn.addEventListener('click', toggleModal);
