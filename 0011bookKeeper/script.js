@@ -1,8 +1,10 @@
 const showModalBtn = document.getElementById('show-modal');
 const modal = document.getElementById('modal');
+const closeModalBtn = document.getElementById('close-modal');
 
-const showModal = () => {
-	modal.classList.add('show-modal');
+const toggleModal = () => {
+	modal.classList.toggle('show-modal');
 };
 
-showModalBtn.addEventListener('click', showModal);
+showModalBtn.addEventListener('click', toggleModal);
+closeModalBtn.addEventListener('click', toggleModal);
