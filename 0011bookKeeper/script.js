@@ -6,7 +6,7 @@ const websiteNameEl = document.getElementById('website-name');
 const websiteUrlEl = document.getElementById('website-url');
 const bookmarksContainer = document.getElementById('bookmarks-container');
 
-let bookMarks = [];
+let bookmarks = [];
 
 const toggleModal = () => {
 	modal.classList.toggle('show-modal');
@@ -39,8 +39,10 @@ const storeBookmark = (e) => {
 		name: nameVal,
 		url: urlVal,
 	};
-	bookMarks.push(bookmark);
+	bookmarks.push(bookmark);
+	localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
 	bookmarkForm.reset();
+	websiteNameEl.focus();
 };
 
 modalShow.addEventListener('click', toggleModal);
