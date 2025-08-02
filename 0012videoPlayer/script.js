@@ -23,6 +23,10 @@ const togglePlay = () => {
 		: (video.pause(), showPlayIcon());
 };
 // progress bar
+const updateProgress = () => {
+	// console.log('ct: ', video.currentTime, 'dur: ', video.duration);
+	progressBar.style.width = `${(video.currentTime / video.duration) * 100}%`;
+};
 
 // volume controls
 
@@ -32,3 +36,5 @@ const togglePlay = () => {
 
 playBtn.addEventListener('click', togglePlay);
 video.addEventListener('ended', showPlayIcon);
+video.addEventListener('timeupdate', updateProgress);
+video.addEventListener('canplay', updateProgress);
