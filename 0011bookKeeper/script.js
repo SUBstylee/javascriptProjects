@@ -6,7 +6,12 @@ const websiteNameEl = document.getElementById('website-name');
 const websiteUrlEl = document.getElementById('website-url');
 const bookmarksContainer = document.getElementById('bookmarks-container');
 
-let bookmarks = [];
+let bookmarks = [
+	{
+		name: 'Jeremy Threlfall Portfolio',
+		url: 'https://www.jjthr.com/portfolio',
+	},
+];
 
 const toggleModal = () => {
 	modal.classList.toggle('show-modal');
@@ -29,9 +34,9 @@ const validateFormInputs = (nameVal, urlVal) => {
 };
 
 const fetchBookmarks = () => {
-	if (localStorage.getItem('bookmarks'))
-		bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
-	return;
+	localStorage.getItem('bookmarks')
+		? (bookmarks = JSON.parse(localStorage.getItem('bookmarks')))
+		: localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
 };
 
 const storeBookmark = (e) => {
