@@ -11,12 +11,25 @@ const toggleModal = () => {
 	if (modal.classList.contains('show-modal')) websiteNameEl.focus();
 };
 
+const validateFormInputs = (nameVal, urlVal) => {
+	const expression =
+		/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g;
+	const regex = new RegExp(expression);
+	if (urlVal.match(regex)) alert('match');
+	if (!urlVal.match(regex)) {
+		alert('Invalid URL! \n Please try again.');
+		return false;
+	}
+};
+
 const storeBookmark = (e) => {
 	e.preventDefault();
 	const nameVal = websiteNameEl.value;
 	let urlVal = websiteUrlEl.value;
-	if (!urlValue.includes('https://') && !urlValue.includes('http://'))
-		urlValue = `https://${urlValue}`;
+	if (!urlVal.includes('https://') && !urlVal.includes('http://'))
+		urlVal = `https://${urlVal}`;
+	console.log(nameVal, urlVal);
+	validateFormInputs(nameVal, urlVal);
 };
 
 modalShow.addEventListener('click', toggleModal);
