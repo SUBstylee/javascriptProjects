@@ -99,6 +99,7 @@ const storeBookmark = (e) => {
 	localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
 	bookmarkForm.reset();
 	websiteNameEl.focus();
+	fetchBookmarks();
 };
 
 modalShow.addEventListener('click', toggleModal);
