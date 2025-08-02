@@ -52,4 +52,8 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
   A URL bookmark index, that also uses favicons for visual representation. Uses localstorage to persist bookmarks between sessions.
 
+- [Project 12: Custom Video Player](./0012videoPlayer/index.html)
+
+  A custom video player, built from scratch.
+
   ### More projects will be added soon
