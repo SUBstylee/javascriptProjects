@@ -218,6 +218,15 @@ select > option {
 	transform: translateY(-50%);
 }
 
+/* Media Query: Large Screens */
+@media screen and (min-width: 1921px) {
+	.video-fullscreen {
+		position: static;
+		top: auto;
+		transform: none;
+	}
+}
+
 /* Media Query: Large Smartphone (Vertical) */
 @media screen and (max-width: 600px) {
 	.player {
