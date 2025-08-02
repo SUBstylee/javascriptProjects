@@ -28,12 +28,6 @@ const validateFormInputs = (nameVal, urlVal) => {
 	return true;
 };
 
-const cleanupForm = () => {
-	websiteNameEl.value = '';
-	websiteUrlEl.value = '';
-	toggleModal();
-};
-
 const storeBookmark = (e) => {
 	e.preventDefault();
 	const nameVal = websiteNameEl.value;
@@ -46,7 +40,7 @@ const storeBookmark = (e) => {
 		url: urlVal,
 	};
 	bookMarks.push(bookmark);
-	cleanupForm();
+	bookmarkForm.reset();
 };
 
 modalShow.addEventListener('click', toggleModal);
