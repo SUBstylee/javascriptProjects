@@ -9,7 +9,7 @@ const bookmarksContainer = document.getElementById('bookmarks-container');
 let bookmarks = [
 	{
 		name: 'Jeremy Threlfall Portfolio',
-		url: 'https://www.jjthr.com/portfolio',
+		url: 'https://www.jjthr.com',
 	},
 ];
 
