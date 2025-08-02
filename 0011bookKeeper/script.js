@@ -15,11 +15,15 @@ const validateFormInputs = (nameVal, urlVal) => {
 	const expression =
 		/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g;
 	const regex = new RegExp(expression);
-	if (urlVal.match(regex)) alert('match');
+	if (!nameVal || !urlVal) {
+		alert('Please fill out all fields!');
+		return false;
+	}
 	if (!urlVal.match(regex)) {
 		alert('Invalid URL! \n Please try again.');
 		return false;
 	}
+	return true;
 };
 
 const storeBookmark = (e) => {
@@ -29,7 +33,7 @@ const storeBookmark = (e) => {
 	if (!urlVal.includes('https://') && !urlVal.includes('http://'))
 		urlVal = `https://${urlVal}`;
 	console.log(nameVal, urlVal);
-	validateFormInputs(nameVal, urlVal);
+	if (!validateFormInputs(nameVal, urlVal)) return false;
 };
 
 modalShow.addEventListener('click', toggleModal);
