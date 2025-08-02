@@ -10,7 +10,15 @@ const duration = document.querySelector('.time-duration');
 const fullscreenBtn = document.querySelector('.fullscreen');
 
 // play & pause
-
+const togglePlay = () => {
+	video.paused
+		? (video.play(),
+		  playBtn.classList.replace('fa-play', 'fa-pause'),
+		  (playBtn.title = 'Pause'))
+		: (video.pause(),
+		  playBtn.classList.replace('fa-pause', 'fa-play'),
+		  (playBtn.title = 'Play'));
+};
 // progress bar
 
 // volume controls
@@ -18,3 +26,5 @@ const fullscreenBtn = document.querySelector('.fullscreen');
 // change playback speed
 
 // fullscreen
+
+playBtn.addEventListener('click', togglePlay);
