@@ -33,10 +33,47 @@ const validateFormInputs = (nameVal, urlVal) => {
 	return true;
 };
 
+const buildBookmarks = () => {
+	bookmarksContainer.textContent = '';
+	bookmarks.forEach((bookmark) => {
+		const { name, url } = bookmark;
+		// item
+		const item = document.createElement('div');
+		item.classList.add('item');
+		// close icon
+		const closeIcon = document.createElement('i');
+		closeIcon.classList.add('fas', 'fa-times');
+		closeIcon.setAttribute('title', 'Delete Bookmark');
+		closeIcon.setAttribute('onclick', `deleteBookmark('${url}')`);
+		// favicon / link container
+		const linkInfo = document.createElement('div');
+		linkInfo.classList.add('name');
+		// favicon
+		const favicon = document.createElement('img');
+		favicon.setAttribute(
+			'src',
+			`https://s2.googleusercontent.com/s2/favicons?domain=${
+				new URL(url).hostname
+			}`,
+		);
+		favicon.setAttribute('alt', 'Favicon');
+		// link
+		const link = document.createElement('a');
+		link.setAttribute('href', `${url}`);
+		link.setAttribute('target', '_blank');
+		link.textContent = name;
+		// append to bookmarks container
+		linkInfo.append(favicon, link);
+		item.append(closeIcon, linkInfo);
+		bookmarksContainer.appendChild(item);
+	});
+};
+
 const fetchBookmarks = () => {
 	localStorage.getItem('bookmarks')
 		? (bookmarks = JSON.parse(localStorage.getItem('bookmarks')))
 		: localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+	buildBookmarks();
 };
 
 const storeBookmark = (e) => {
@@ -64,3 +101,20 @@ window.addEventListener('click', (e) => {
 bookmarkForm.addEventListener('submit', storeBookmark);
 
 fetchBookmarks();
+
+{
+	/* 
+<div class='item'>
+	<i class='fas fa-times' id='delete-bookmark' title='Delete Bookmark'></i>
+	<div class='name'>
+		<img
+			src='https://s2.googleusercontent.com/s2/favicons?domain=www.google.com'
+			alt='favicon'
+		/>
+		<a href='https://www.google.com' target='_blank'>
+			Google
+		</a>
+	</div>
+</div>; 
+*/
+}
