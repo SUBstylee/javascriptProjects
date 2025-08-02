@@ -28,6 +28,12 @@ const validateFormInputs = (nameVal, urlVal) => {
 	return true;
 };
 
+const fetchBookmarks = () => {
+	if (localStorage.getItem('bookmarks'))
+		bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+	return;
+};
+
 const storeBookmark = (e) => {
 	e.preventDefault();
 	const nameVal = websiteNameEl.value;
@@ -51,3 +57,5 @@ window.addEventListener('click', (e) => {
 	e.target === modal ? modal.classList.remove('show-modal') : false;
 });
 bookmarkForm.addEventListener('submit', storeBookmark);
+
+fetchBookmarks();
