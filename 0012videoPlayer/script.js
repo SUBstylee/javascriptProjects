@@ -91,7 +91,7 @@ const changeSpeed = () => {
 // fullscreen
 let fullscreen = false;
 
-function openFullscreen(elem) {
+const openFullscreen = (elem) => {
 	if (elem.requestFullscreen) {
 		elem.requestFullscreen();
 	} else if (elem.webkitRequestFullscreen) {
@@ -102,9 +102,9 @@ function openFullscreen(elem) {
 		elem.msRequestFullscreen();
 	}
 	video.classList.add('video-fullscreen');
-}
+};
 
-function closeFullscreen() {
+const closeFullscreen = () => {
 	if (document.exitFullscreen) {
 		document.exitFullscreen();
 	} else if (document.webkitExitFullscreen) {
@@ -115,7 +115,7 @@ function closeFullscreen() {
 		document.msExitFullscreen();
 	}
 	video.classList.remove('video-fullscreen');
-}
+};
 
 const toggleFullscreen = () => {
 	!fullscreen ? openFullscreen(player) : closeFullscreen();
