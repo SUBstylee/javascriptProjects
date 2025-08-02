@@ -23,9 +23,17 @@ const togglePlay = () => {
 		: (video.pause(), showPlayIcon());
 };
 // progress bar
+const displayTime = (time) => {
+	const minutes = Math.floor(time / 60);
+	let seconds = Math.floor(time % 60);
+	seconds = seconds > 9 ? seconds : `0${seconds}`;
+	return `${minutes}:${seconds}`;
+};
+
 const updateProgress = () => {
-	// console.log('ct: ', video.currentTime, 'dur: ', video.duration);
 	progressBar.style.width = `${(video.currentTime / video.duration) * 100}%`;
+	currentTime.textContent = `${displayTime(video.currentTime)} / `;
+	duration.textContent = `${displayTime(video.duration)}`;
 };
 
 // volume controls
