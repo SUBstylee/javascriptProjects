@@ -43,7 +43,20 @@ const setProgress = (e) => {
 };
 
 // volume controls
-
+const changeVolume = (e) => {
+	let volume = e.offsetX / volumeRange.offsetWidth;
+	if (volume < 0.1) volume = 0;
+	if (volume > 0.9) volume = 1;
+	volumeBar.style.width = `${volume * 100}%`;
+	volumeIcon.className = '';
+	if (volume > 0.7) {
+		volumeIcon.classList.add('fas', 'fa-volume-up');
+	} else if (volume < 0.7 && volume > 0) {
+		volumeIcon.classList.add('fas', 'fa-volume-down');
+	} else {
+		volumeIcon.classList.add('fas', 'fa-volume-off');
+	}
+};
 // change playback speed
 
 // fullscreen
@@ -53,3 +66,4 @@ video.addEventListener('ended', showPlayIcon);
 video.addEventListener('timeupdate', updateProgress);
 video.addEventListener('canplay', updateProgress);
 progressRange.addEventListener('click', setProgress);
+volumeRange.addEventListener('click', changeVolume);
