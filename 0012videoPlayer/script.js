@@ -1,3 +1,4 @@
+const player = document.querySelector('.player');
 const video = document.querySelector('video');
 const progressRange = document.querySelector('.progress-range');
 const progressBar = document.querySelector('.progress-bar');
@@ -88,6 +89,36 @@ const changeSpeed = () => {
 };
 
 // fullscreen
+let fullscreen = false;
+
+function openFullscreen(elem) {
+	if (elem.requestFullscreen) {
+		elem.requestFullscreen();
+	} else if (elem.webkitRequestFullscreen) {
+		/* Safari */
+		elem.webkitRequestFullscreen();
+	} else if (elem.msRequestFullscreen) {
+		/* IE11 */
+		elem.msRequestFullscreen();
+	}
+}
+
+function closeFullscreen() {
+	if (document.exitFullscreen) {
+		document.exitFullscreen();
+	} else if (document.webkitExitFullscreen) {
+		/* Safari */
+		document.webkitExitFullscreen();
+	} else if (document.msExitFullscreen) {
+		/* IE11 */
+		document.msExitFullscreen();
+	}
+}
+
+const toggleFullscreen = () => {
+	!fullscreen ? openFullscreen(player) : closeFullscreen();
+	fullscreen = !fullscreen;
+};
 
 playBtn.addEventListener('click', togglePlay);
 video.addEventListener('ended', showPlayIcon);
@@ -97,3 +128,4 @@ progressRange.addEventListener('click', setProgress);
 volumeRange.addEventListener('click', changeVolume);
 volumeIcon.addEventListener('click', toggleMute);
 speed.addEventListener('change', changeSpeed);
+fullscreenBtn.addEventListener('click', toggleFullscreen);
