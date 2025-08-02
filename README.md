@@ -54,6 +54,6 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
 - [Project 12: Custom Video Player](./0012videoPlayer/index.html)
 
-  A custom video player, built from scratch.
+  A custom video player, built from scratch. Note that place holder video has no sound. You can replace the src in dev tools if you want to test sound.
 
   ### More projects will be added soon
