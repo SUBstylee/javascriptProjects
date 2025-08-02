@@ -101,6 +101,7 @@ function openFullscreen(elem) {
 		/* IE11 */
 		elem.msRequestFullscreen();
 	}
+	video.classList.add('video-fullscreen');
 }
 
 function closeFullscreen() {
@@ -113,6 +114,7 @@ function closeFullscreen() {
 		/* IE11 */
 		document.msExitFullscreen();
 	}
+	video.classList.remove('video-fullscreen');
 }
 
 const toggleFullscreen = () => {
