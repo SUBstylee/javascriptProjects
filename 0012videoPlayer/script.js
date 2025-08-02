@@ -10,14 +10,17 @@ const duration = document.querySelector('.time-duration');
 const fullscreenBtn = document.querySelector('.fullscreen');
 
 // play & pause
+const showPlayIcon = () => {
+	playBtn.classList.replace('fa-pause', 'fa-play');
+	playBtn.title = 'Play';
+};
+
 const togglePlay = () => {
 	video.paused
 		? (video.play(),
 		  playBtn.classList.replace('fa-play', 'fa-pause'),
 		  (playBtn.title = 'Pause'))
-		: (video.pause(),
-		  playBtn.classList.replace('fa-pause', 'fa-play'),
-		  (playBtn.title = 'Play'));
+		: (video.pause(), showPlayIcon());
 };
 // progress bar
 
@@ -28,3 +31,4 @@ const togglePlay = () => {
 // fullscreen
 
 playBtn.addEventListener('click', togglePlay);
+video.addEventListener('ended', showPlayIcon);
