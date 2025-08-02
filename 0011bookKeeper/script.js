@@ -76,6 +76,14 @@ const fetchBookmarks = () => {
 	buildBookmarks();
 };
 
+const deleteBookmark = (url) => {
+	bookmarks.forEach((bookmark, i) => {
+		if (bookmark.url === url) bookmarks.splice(i, 1);
+	});
+	localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+	fetchBookmarks();
+};
+
 const storeBookmark = (e) => {
 	e.preventDefault();
 	const nameVal = websiteNameEl.value;
@@ -101,20 +109,3 @@ window.addEventListener('click', (e) => {
 bookmarkForm.addEventListener('submit', storeBookmark);
 
 fetchBookmarks();
-
-{
-	/* 
-<div class='item'>
-	<i class='fas fa-times' id='delete-bookmark' title='Delete Bookmark'></i>
-	<div class='name'>
-		<img
-			src='https://s2.googleusercontent.com/s2/favicons?domain=www.google.com'
-			alt='favicon'
-		/>
-		<a href='https://www.google.com' target='_blank'>
-			Google
-		</a>
-	</div>
-</div>; 
-*/
-}
