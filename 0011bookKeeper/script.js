@@ -6,6 +6,8 @@ const websiteNameEl = document.getElementById('website-name');
 const websiteUrlEl = document.getElementById('website-url');
 const bookmarksContainer = document.getElementById('bookmarks-container');
 
+let bookMarks = [];
+
 const toggleModal = () => {
 	modal.classList.toggle('show-modal');
 	if (modal.classList.contains('show-modal')) websiteNameEl.focus();
@@ -26,14 +28,25 @@ const validateFormInputs = (nameVal, urlVal) => {
 	return true;
 };
 
+const cleanupForm = () => {
+	websiteNameEl.value = '';
+	websiteUrlEl.value = '';
+	toggleModal();
+};
+
 const storeBookmark = (e) => {
 	e.preventDefault();
 	const nameVal = websiteNameEl.value;
 	let urlVal = websiteUrlEl.value;
 	if (!urlVal.includes('https://') && !urlVal.includes('http://'))
 		urlVal = `https://${urlVal}`;
-	console.log(nameVal, urlVal);
 	if (!validateFormInputs(nameVal, urlVal)) return false;
+	const bookmark = {
+		name: nameVal,
+		url: urlVal,
+	};
+	bookMarks.push(bookmark);
+	cleanupForm();
 };
 
 modalShow.addEventListener('click', toggleModal);
