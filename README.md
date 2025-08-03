@@ -50,7 +50,7 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
 - [Project 11: Book Keeper](./0011bookKeeper/index.html)
 
-  A URL bookmark index, that also uses favicons for visual representation. Uses localstorage to persist bookmarks between sessions.
+  A URL bookmark index, that also uses favicons for visual representation. Uses localstorage to persist bookmarks between sessions, and RegEx for URL checking.
 
 - [Project 12: Custom Video Player](./0012videoPlayer/index.html)
 
