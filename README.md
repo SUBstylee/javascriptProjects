@@ -56,4 +56,8 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
   A custom video player, built from scratch. Note that place holder video has no sound. You can replace the src in dev tools if you want to test sound.
 
+- [Project 13: Form Validation](./0013formValidation/index.html)
+
+  A styled form with validation in HTML and JS.
+
   ### More projects will be added soon
