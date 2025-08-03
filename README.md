@@ -58,6 +58,6 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
 - [Project 13: Form Validation](./0013formValidation/index.html)
 
-  A styled form with validation in HTML and JS.
+  A styled form with validation in HTML and JS. Check console to see the data object after submitting the form, since data is not actually going anywhere.
 
   ### More projects will be added soon
