@@ -35,9 +35,22 @@ const validateForm = () => {
 	}
 };
 
+const storeFormData = () => {
+	const user = {
+		name: form.name.value,
+		phone: form.phone.value,
+		email: form.email.value,
+		website: form.website.value,
+		password: form.password.value,
+	};
+	// would do something with this data, but only for testing out validation, just show it in console.
+	console.log(user);
+};
+
 const processFormData = (e) => {
 	e.preventDefault();
 	validateForm();
+	isValid && passwordsMatch ? storeFormData() : null;
 };
 
 form.addEventListener('submit', processFormData);
