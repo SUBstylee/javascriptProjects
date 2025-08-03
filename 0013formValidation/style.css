@@ -47,4 +47,13 @@ input {
 	border-radius: 5px;
 	outline: none;
 	box-sizing: border-box;
+	transition: all 0.3s;
+}
+
+input:valid {
+	border: 1px solid#080;
+}
+
+input:invalid {
+	border: 1px solid#f00;
 }
