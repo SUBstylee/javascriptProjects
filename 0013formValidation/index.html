@@ -13,34 +13,63 @@
 			<form id="form">
 				<div class="form-group">
 					<label for="name">Full Name</label>
-					<input type="text" id="name" placeholder="Full Name" />
+					<input
+						required
+						type="text"
+						id="name"
+						placeholder="Full Name"
+						minlength="3"
+						maxlength="50"
+					/>
 				</div>
 				<div class="form-group">
 					<label for="phone">Phone Number</label>
-					<input type="tel" id="phone" placeholder="555-555-5555" />
+					<input
+						required
+						type="tel"
+						id="phone"
+						placeholder="555-555-5555"
+						pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+					/>
 				</div>
 				<div class="form-group">
 					<label for="email">Email Address</label>
-					<input type="email" id="email" placeholder="email@address.com" />
+					<input
+						required
+						type="email"
+						id="email"
+						placeholder="email@address.com"
+					/>
 				</div>
 				<div class="form-group">
 					<label for="website">Your Website</label>
-					<input type="url" id="website" placeholder="https://www.jjthr.com" />
+					<input
+						required
+						type="url"
+						id="website"
+						placeholder="https://www.jjthr.com"
+					/>
 				</div>
 				<div class="form-group">
 					<label for="password1">Password</label>
 					<input
+						required
 						type="password"
 						id="password1"
-						placeholder="8 chars min, with a capital and number"
+						placeholder="Create Password (Min. 8 characters)"
+						title="Please include at least 1 uppercase character, 1 lowercase character, and a number."
+						pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,30}$"
 					/>
 				</div>
 				<div class="form-group">
 					<label for="password2">Confirm Password</label>
 					<input
+						required
 						type="password"
 						id="password2"
-						placeholder="8 chars min, w/capital and number"
+						placeholder="Confirm Password"
+						title="Password does not match."
+						pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,30}$"
 					/>
 				</div>
 				<button type="submit">Register</button>
