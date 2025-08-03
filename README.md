@@ -60,4 +60,8 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
   A styled form with validation in HTML and JS. Check console to see the data object after submitting the form, since data is not actually going anywhere.
 
+- [Project 14: Spock Rock Game](./0014spockRockGame/index.html)
+
+  A Rock Paper Scissors Lizard Spock game. Player vs Computer, with score tracker and reset button. Score is saved in local storage until reset.
+
   ### More projects will be added soon
