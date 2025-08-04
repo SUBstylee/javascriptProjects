@@ -34,10 +34,37 @@ let storedScores = {
 	computer: 0,
 };
 
+const updateStoredScores = () => {
+	localStorage.setItem('scores', JSON.stringify(storedScores));
+};
+
+const fetchScores = () => {
+	localStorage.getItem('scores')
+		? (storedScores = JSON.parse(localStorage.getItem('scores')))
+		: localStorage.setItem('scores', JSON.stringify(storedScores));
+	playerScoreNumber = storedScores.player;
+	computerScoreNumber = storedScores.computer;
+	playerScoreEl.textContent = playerScoreNumber;
+	computerScoreEl.textContent = computerScoreNumber;
+};
+
 const resetSelected = () => {
 	allGameIcons.forEach((icon) => {
 		icon.classList.remove('selected');
 	});
+};
+
+const resetAll = () => {
+	playerScoreNumber = 0;
+	computerScoreNumber = 0;
+	storedScores.player = playerScoreNumber;
+	storedScores.computer = computerScoreNumber;
+	updateStoredScores();
+	resetSelected();
+	playerChoiceEl.textContent = '';
+	computerChoiceEl.textContent = '';
+	resultText.textContent = '';
+	fetchScores();
 };
 
 const computerRandomChoice = () => {
@@ -80,10 +107,6 @@ const displayComputerChoice = () => {
 		default:
 			break;
 	}
-};
-
-const updateStoredScores = () => {
-	localStorage.setItem('scores', JSON.stringify(storedScores));
 };
 
 const updateScore = (playerChoice) => {
@@ -140,16 +163,6 @@ const select = (playerChoice) => {
 		default:
 			break;
 	}
-};
-
-const fetchScores = () => {
-	localStorage.getItem('scores')
-		? (storedScores = JSON.parse(localStorage.getItem('scores')))
-		: localStorage.setItem('scores', JSON.stringify(storedScores));
-	playerScoreNumber = storedScores.player;
-	computerScoreNumber = storedScores.computer;
-	playerScoreEl.textContent = playerScoreNumber;
-	computerScoreEl.textContent = computerScoreNumber;
 };
 
 fetchScores();
