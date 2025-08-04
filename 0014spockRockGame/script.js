@@ -29,6 +29,10 @@ const choices = {
 let playerScoreNumber = 0;
 let computerScoreNumber = 0;
 let computerChoice = '';
+let storedScores = {
+	player: 0,
+	computer: 0,
+};
 
 const resetSelected = () => {
 	allGameIcons.forEach((icon) => {
@@ -78,8 +82,11 @@ const displayComputerChoice = () => {
 	}
 };
 
+const updateStoredScores = () => {
+	localStorage.setItem('scores', JSON.stringify(storedScores));
+};
+
 const updateScore = (playerChoice) => {
-	console.log(playerChoice, computerChoice);
 	if (playerChoice === computerChoice) {
 		resultText.textContent = "It's a tie.";
 	} else {
@@ -87,11 +94,15 @@ const updateScore = (playerChoice) => {
 		if (choice.defeats.indexOf(computerChoice) > -1) {
 			resultText.textContent = 'You Won!';
 			playerScoreNumber++;
+			storedScores.player = playerScoreNumber;
 			playerScoreEl.textContent = playerScoreNumber;
+			updateStoredScores();
 		} else {
 			resultText.textContent = 'Computer Won : (';
 			computerScoreNumber++;
-			computerScoreEl.textContent = playerScoreNumber;
+			storedScores.computer = computerScoreNumber;
+			computerScoreEl.textContent = computerScoreNumber;
+			updateStoredScores();
 		}
 	}
 };
@@ -130,3 +141,15 @@ const select = (playerChoice) => {
 			break;
 	}
 };
+
+const fetchScores = () => {
+	localStorage.getItem('scores')
+		? (storedScores = JSON.parse(localStorage.getItem('scores')))
+		: localStorage.setItem('scores', JSON.stringify(storedScores));
+	playerScoreNumber = storedScores.player;
+	computerScoreNumber = storedScores.computer;
+	playerScoreEl.textContent = playerScoreNumber;
+	computerScoreEl.textContent = computerScoreNumber;
+};
+
+fetchScores();
