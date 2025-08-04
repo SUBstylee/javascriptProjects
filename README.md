@@ -62,6 +62,6 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
 - [Project 14: Spock Rock Game](./0014spockRockGame/index.html)
 
-  A Rock Paper Scissors Lizard Spock game. Player vs Computer, with score tracker and reset button. Score is saved in local storage until reset.
+  A Rock Paper Scissors Lizard Spock game. Player vs Computer, with score tracker and reset button. Score is saved in local storage until reset. Also uses Confetti.js for win animation.
 
   ### More projects will be added soon
