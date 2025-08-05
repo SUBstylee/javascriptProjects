@@ -1,36 +1,36 @@
-// Pages
+// pages
 const gamePage = document.getElementById('game-page');
 const scorePage = document.getElementById('score-page');
 const splashPage = document.getElementById('splash-page');
 const countdownPage = document.getElementById('countdown-page');
-// Splash Page
+// splash page
 const startForm = document.getElementById('start-form');
 const radioContainers = document.querySelectorAll('.radio-container');
 const radioInputs = document.querySelectorAll('input');
 const bestScores = document.querySelectorAll('.best-score-value');
-// Countdown Page
+// countdown page
 const countdown = document.querySelector('.countdown');
-// Game Page
+// game page
 const itemContainer = document.querySelector('.item-container');
-// Score Page
+// score page
 const finalTimeEl = document.querySelector('.final-time');
 const baseTimeEl = document.querySelector('.base-time');
 const penaltyTimeEl = document.querySelector('.penalty-time');
 const playAgainBtn = document.querySelector('.play-again');
 
-// Equations
+// equations
 let questionAmount = 0;
 let equationsArray = [];
 
-// Game Page
+// game page
 let firstNumber = 0;
 let secondNumber = 0;
 let equationObject = {};
 const wrongFormat = [];
 
-// Time
+// time
 
-// Scroll
+// scroll
 
 // display game page
 const showGamePage = () => {
@@ -52,7 +52,7 @@ const shuffle = (array) => {
 };
 
 // create correct/incorrect random equations
-function createEquations() {
+const createEquations = () => {
 	// randomly choose how many correct equations there should be
 	const correctEquations = getRandomInt(questionAmount);
 	// set amount of wrong equations
@@ -66,7 +66,7 @@ function createEquations() {
 		equationObject = { value: equation, evaluated: 'true' };
 		equationsArray.push(equationObject);
 	}
-	// Loop through, mess with the equation results, push to array
+	// loop through, mess with the equation results, push to array
 	for (let i = 0; i < wrongEquations; i++) {
 		const firstNumber = getRandomInt(9);
 		const secondNumber = getRandomInt(9);
@@ -81,7 +81,7 @@ function createEquations() {
 	}
 	shuffle(equationsArray);
 	equationsToDOM();
-}
+};
 
 // add equations to DOM
 const equationsToDOM = () => {
@@ -95,26 +95,26 @@ const equationsToDOM = () => {
 	});
 };
 
-// Dynamically adding correct/incorrect equations
-// function populateGamePage() {
-//   // Reset DOM, Set Blank Space Above
-//   itemContainer.textContent = '';
-//   // Spacer
-//   const topSpacer = document.createElement('div');
-//   topSpacer.classList.add('height-240');
-//   // Selected Item
-//   const selectedItem = document.createElement('div');
-//   selectedItem.classList.add('selected-item');
-//   // Append
-//   itemContainer.append(topSpacer, selectedItem);
+// dynamically adding correct/incorrect equations
+const populateGamePage = () => {
+	// reset dom, set blank space above
+	itemContainer.textContent = '';
+	// spacer
+	const topSpacer = document.createElement('div');
+	topSpacer.classList.add('height-240');
+	// selected item
+	const selectedItem = document.createElement('div');
+	selectedItem.classList.add('selected-item');
+	// append
+	itemContainer.append(topSpacer, selectedItem);
 
-//   // Create Equations, Build Elements in DOM
+	// create equations, build elements in dom
 
-//   // Set Blank Space Below
-//   const bottomSpacer = document.createElement('div');
-//   bottomSpacer.classList.add('height-500');
-//   itemContainer.appendChild(bottomSpacer);
-// }
+	// set blank space below
+	const bottomSpacer = document.createElement('div');
+	bottomSpacer.classList.add('height-500');
+	itemContainer.appendChild(bottomSpacer);
+};
 
 // displays countdown
 const countdownStart = () => {
