@@ -87,9 +87,7 @@ function createEquations() {
 const getRadioValue = () => {
 	let radioValue;
 	radioInputs.forEach((radioInput) => {
-		if (radioInput.checked) {
-			radioValue = radioInput.value;
-		}
+		radioInput.checked && (radioValue = radioInput.value);
 	});
 	return radioValue;
 };
