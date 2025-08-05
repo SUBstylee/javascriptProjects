@@ -85,20 +85,12 @@ function createEquations() {
 
 // displays countdown
 const countdownStart = () => {
-	countdown.textContent = '3';
-	setTimeout(() => {
-		countdown.textContent = '2';
-	}, 1000);
-	setTimeout(() => {
-		countdown.textContent = '1';
-	}, 2000);
-	setTimeout(() => {
-		countdown.textContent = 'GO!';
-	}, 3000);
-	// setTimeout(() => {
-	// 	countdownPage.hidden = true;
-	// 	gamePage.hidden = false;
-	// }, 3300);
+	const coundownValues = ['3', '2', '1', 'GO!'];
+	coundownValues.forEach((val, i) => {
+		setTimeout(() => {
+			countdown.textContent = val;
+		}, i * 1000);
+	});
 };
 
 // navigate from splash to countdown page
