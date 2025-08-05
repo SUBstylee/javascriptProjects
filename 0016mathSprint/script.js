@@ -32,6 +32,12 @@ const wrongFormat = [];
 
 // Scroll
 
+// display game page
+const showGamePage = () => {
+	gamePage.hidden = false;
+	countdownPage.hidden = true;
+};
+
 // get a random int based on the questionAmount
 const getRandomInt = (max) => {
 	return Math.floor(Math.random() * Math.floor(max));
@@ -74,7 +80,20 @@ function createEquations() {
 		equationsArray.push(equationObject);
 	}
 	shuffle(equationsArray);
+	equationsToDOM();
 }
+
+// add equations to DOM
+const equationsToDOM = () => {
+	equationsArray.forEach((equation) => {
+		const item = document.createElement('div');
+		item.classList.add('item');
+		const equationText = document.createElement('h1');
+		equationText.textContent = equation.value;
+		item.appendChild(equationText);
+		itemContainer.appendChild(item);
+	});
+};
 
 // Dynamically adding correct/incorrect equations
 // function populateGamePage() {
@@ -112,6 +131,8 @@ const showCountdown = () => {
 	countdownPage.hidden = false;
 	splashPage.hidden = true;
 	countdownStart();
+	createEquations();
+	setTimeout(showGamePage, 5000);
 };
 
 // get value from selected radio button on form
