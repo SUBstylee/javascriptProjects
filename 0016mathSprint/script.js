@@ -21,6 +21,7 @@ const playAgainBtn = document.querySelector('.play-again');
 // equations
 let questionAmount = 0;
 let equationsArray = [];
+let playerGuessArray = [];
 
 // game page
 let firstNumber = 0;
@@ -31,6 +32,16 @@ const wrongFormat = [];
 // time
 
 // scroll
+let valueY = 0;
+
+// scroll and store user selection in playerGuessArray
+const select = (guessedTrue) => {
+	valueY += 80;
+	itemContainer.scroll(0, valueY);
+	return guessedTrue
+		? playerGuessArray.push('true')
+		: playerGuessArray.push('false');
+};
 
 // display game page
 const showGamePage = () => {
@@ -80,7 +91,6 @@ const createEquations = () => {
 		equationsArray.push(equationObject);
 	}
 	shuffle(equationsArray);
-	equationsToDOM();
 };
 
 // add equations to DOM
@@ -109,6 +119,8 @@ const populateGamePage = () => {
 	itemContainer.append(topSpacer, selectedItem);
 
 	// create equations, build elements in dom
+	createEquations();
+	equationsToDOM();
 
 	// set blank space below
 	const bottomSpacer = document.createElement('div');
@@ -131,7 +143,7 @@ const showCountdown = () => {
 	countdownPage.hidden = false;
 	splashPage.hidden = true;
 	countdownStart();
-	createEquations();
+	populateGamePage();
 	setTimeout(showGamePage, 5000);
 };
 
