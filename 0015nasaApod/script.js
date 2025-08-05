@@ -81,6 +81,7 @@ const saveFavorite = (itemUrl) => {
 			setTimeout(() => {
 				saveConfirmed.hidden = true;
 			}, 3000);
+			localStorage.setItem('nasaFavorites', JSON.stringify(favorites));
 		}
 	});
 };
