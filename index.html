@@ -3,155 +3,47 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>JS Projects</title>
-		<link rel="icon" type="image/png" href="favicon.png" />
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
-		/>
+		<title>NASA APOD</title>
 		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="https://s2.googleusercontent.com/s2/favicons?domain=www.nasa.gov"
+		/>
+		<!-- Default Favicon -->
+		<!-- <link rel="icon" type="image/png" href="favicon.png"> -->
 	</head>
 	<body>
-		<h1>JavaScript Projects</h1>
-		<h2>
-			A collection of smaller JavaScript projects, each organized in its own
-			folder. This site is hosted using GitHub Pages.
-		</h2>
-		<div class="links-container">
-			<div class="project-link">
-				<hr />
-				<a href="./0001quoteGenerator/index.html" target="_blank"
-					>Project 1: Quote Generator</a
-				>
-				<p>Simple quote generator. Using a custom API.</p>
-			</div>
-			<div class="project-link">
-				<hr class="hr-13" />
-				<a href="./0002proverbsGenerator/index.html" target="_blank"
-					>Project 2: Proverb Generator</a
-				>
-				<p>
-					Another version of the quote generator, but for proverbs in English
-					and Chinese.
-				</p>
-			</div>
-			<div class="project-link">
-				<hr class="hr-13" />
-				<a href="./0003infinityScroll/index.html" target="_blank"
-					>Project 3: Infinite Scroll</a
-				>
-				<p>
-					Infinite Scroll for images using the Unsplash API. Note it is a free
-					tier, so limited to 50 images an hour.
-				</p>
-			</div>
-			<div class="project-link">
-				<hr class="hr-13" />
-				<a href="./0004pictureInPicture/index.html" target="_blank"
-					>Project 4: Picture In Picture</a
-				>
-				<p>
-					Picture In Picture, using screen sharing to make a resizable PiP from
-					a tab, application, or screen.
-				</p>
-			</div>
-			<div class="project-link">
-				<hr class="hr-13" />
-				<a href="./0005jokeTeller/index.html" target="_blank"
-					>Project 5: Joke Teller</a
-				>
-				<p>
-					Uses the JokeAPI, and VoiceRSS TTS API to read out jokes to users.
-				</p>
-			</div>
-			<div class="project-link">
-				<hr class="hr-13" />
-				<a href="./0006lightDarkMode/index.html" target="_blank"
-					>Project 6: Light & Dark Mode</a
-				>
-				<p>A simple landing page with dark and light mode toggle.</p>
-			</div>
-			<div class="project-link">
-				<hr class="hr-13" />
-				<a href="./0007animatedLandingPage/index.html" target="_blank"
-					>Project 7: Animated Landing Page</a
-				>
-				<p>A simple landing page with animations, and Tailwind CSS.</p>
-			</div>
-			<div class="project-link">
-				<hr class="hr-13" />
-				<a href="./0008animatedNavigation/index.html" target="_blank"
-					>Project 8: Animated Navigation</a
-				>
-				<p>An animated navigation.</p>
-			</div>
-			<div class="project-link">
-				<hr class="hr-13" />
-				<a href="./0009musicPlayer/index.html" target="_blank"
-					>Project 9: Music Player</a
-				>
-				<p>
-					Music player that allows Play, Pause, Next Track, Previous Track, and
-					Seeking by clicking on the progress bar.
-				</p>
-			</div>
-			<div class="project-link">
-				<hr class="hr-13" />
-				<a href="./0010customCountdown/index.html" target="_blank"
-					>Project 10: Custom Countdown</a
-				>
-				<p>
-					Countdown timer that accepts form input from the user to countdown to
-					a future date. Uses localstorage to persist countdown between
-					sessions.
-				</p>
-			</div>
-			<div class="project-link">
-				<hr class="hr-13" />
-				<a href="./0011bookKeeper/index.html" target="_blank"
-					>Project 11: Book Keeper</a
-				>
-				<p>
-					A URL bookmark index, that also uses favicons for visual
-					representation. Uses localstorage to persist bookmarks between
-					sessions, and RegEx for URL checking.
-				</p>
-			</div>
-			<div class="project-link">
-				<hr class="hr-13" />
-				<a href="./0012videoPlayer/index.html" target="_blank"
-					>Project 12: Custom Video Player</a
-				>
-				<p>
-					A custom video player, built from scratch. Note that place holder
-					video has no sound. You can replace the src in dev tools if you want
-					to test sound.
-				</p>
-			</div>
-			<div class="project-link">
-				<hr class="hr-13" />
-				<a href="./0013formValidation/index.html" target="_blank"
-					>Project 13: Form Validation</a
-				>
-				<p>
-					A styled form with validation in HTML and JS. Check console to see the
-					data object after submitting the form, since data is not actually
-					going anywhere.
-				</p>
-			</div>
-			<div class="project-link">
-				<hr class="hr-13" />
-				<a href="./0014spockRockGame/index.html" target="_blank"
-					>Project 14: Spock Rock Game</a
-				>
-				<p>
-					A Rock Paper Scissors Lizard Spock game. Player vs Computer, with
-					score tracker and reset button. Score is saved in local storage until
-					reset. Also uses Confetti.js for win animation.
-				</p>
-			</div>
-			<hr />
+		<!-- Loader -->
+		<div class="loader hidden">
+			<img src="rocket.svg" alt="Rocket Loading Animation" />
 		</div>
-		<h4>More projects will be added soon!</h4>
+		<!-- Container -->
+		<div class="container">
+			<!-- Navigation -->
+			<div class="navigation-container">
+				<span class="background"></span>
+				<!-- Results Nav -->
+				<span class="navigation-items" id="resultsNav">
+					<h3 class="clickable" onclick="updateDOM('favorites')">Favorites</h3>
+					<h3>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</h3>
+					<h3 class="clickable" onclick="getNasaPictures()">Load More</h3>
+				</span>
+				<!-- Favorites Nav -->
+				<span class="navigation-items hidden" id="favoritesNav">
+					<h3 class="clickable" onclick="getNasaPictures()">
+						Load More NASA Images
+					</h3>
+				</span>
+			</div>
+			<!-- Images Container -->
+			<div class="images-container"></div>
+		</div>
+		<!-- Save Confirmation -->
+		<div class="save-confirmed" hidden>
+			<h1>ADDED!</h1>
+		</div>
+		<!-- Script -->
+		<script src="script.js"></script>
 	</body>
 </html>
