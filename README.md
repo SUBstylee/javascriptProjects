@@ -64,4 +64,8 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
   A Rock Paper Scissors Lizard Spock game. Player vs Computer, with score tracker and reset button. Score is saved in local storage until reset. Also uses Confetti.js for win animation.
 
+- [Project 15: NASA APOD](./0015nasaApod/index.html)
+
+  Page that uses the NASA APOD API. User can save an image to favorites which are saved to local storage, and load more images when they reach the bottom. Note that it is using a demo version of the API, so limited to 30 images per hour.
+
   ### More projects will be added soon
