@@ -68,4 +68,8 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
   Page that uses the NASA APOD API. User can save an image to favorites which are saved to local storage, and load more images when they reach the bottom. Note that it is using a demo version of the API, so limited to 30 images per hour.
 
+- [Project 16: Math Sprint Game](./0016mathSprint/index.html)
+
+  Math game that measures time, and keeps score in local storage. Has several views, and dynamically populates questions. Uses Fisher-Yates shuffle for randomization.
+
   ### More projects will be added soon
