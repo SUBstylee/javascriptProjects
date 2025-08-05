@@ -83,10 +83,29 @@ function createEquations() {
 //   itemContainer.appendChild(bottomSpacer);
 // }
 
+// displays countdown
+const countdownStart = () => {
+	countdown.textContent = '3';
+	setTimeout(() => {
+		countdown.textContent = '2';
+	}, 1000);
+	setTimeout(() => {
+		countdown.textContent = '1';
+	}, 2000);
+	setTimeout(() => {
+		countdown.textContent = 'GO!';
+	}, 3000);
+	// setTimeout(() => {
+	// 	countdownPage.hidden = true;
+	// 	gamePage.hidden = false;
+	// }, 3300);
+};
+
 // navigate from splash to countdown page
 const showCountdown = () => {
 	countdownPage.hidden = false;
 	splashPage.hidden = true;
+	countdownStart();
 };
 
 // get value from selected radio button on form
