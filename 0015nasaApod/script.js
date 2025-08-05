@@ -5,13 +5,15 @@ const saveConfirmed = document.querySelector('.save-confirmed');
 const loader = document.querySelector('.loader');
 
 const count = 10;
-const apiKey = 'DEMO_KEY';
+// const apiKey = 'DEMO_KEY';
+
 const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&count=${count}`;
 
 let resultsArray = [];
 let favorites = {};
 
 const showContent = () => {
+	window.scrollTo({ top: 0, behavior: 'instant' });
 	loader.classList.add('hidden');
 };
 
