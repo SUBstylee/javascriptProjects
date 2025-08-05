@@ -49,7 +49,8 @@ const updateDOM = () => {
 		date.textContent = res.date;
 		// copyright
 		const copyright = document.createElement('span');
-		copyright.textContent = res.copyright ? ` ${res.copyright}` : '';
+		const copyrightRes = res.copyright ? ` ${res.copyright}` : '';
+		copyright.textContent = copyrightRes;
 		// append
 		footer.append(date, copyright);
 		cardBody.append(cardTitle, saveText, cardText, footer);
