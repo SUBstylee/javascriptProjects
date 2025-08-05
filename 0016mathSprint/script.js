@@ -32,34 +32,48 @@ const wrongFormat = [];
 
 // Scroll
 
-// Create Correct/Incorrect Random Equations
+// get a random int based on the questionAmount
+const getRandomInt = (max) => {
+	return Math.floor(Math.random() * Math.floor(max));
+};
+
+// fisher-yates shuffle
+const shuffle = (array) => {
+	for (let i = array.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[array[i], array[j]] = [array[j], array[i]];
+	}
+};
+
+// create correct/incorrect random equations
 function createEquations() {
-	// Randomly choose how many correct equations there should be
-	// const correctEquations =
-	// Set amount of wrong equations
-	// const wrongEquations =
-	// Loop through, multiply random numbers up to 9, push to array
-	// for (let i = 0; i < correctEquations; i++) {
-	//   firstNumber =
-	//   secondNumber =
-	//   const equationValue = firstNumber * secondNumber;
-	//   const equation = `${firstNumber} x ${secondNumber} = ${equationValue}`;
-	//   equationObject = { value: equation, evaluated: 'true' };
-	//   equationsArray.push(equationObject);
-	// }
+	// randomly choose how many correct equations there should be
+	const correctEquations = getRandomInt(questionAmount);
+	// set amount of wrong equations
+	const wrongEquations = questionAmount - correctEquations;
+	// loop through, multiply random numbers up to 9, push to array
+	for (let i = 0; i < correctEquations; i++) {
+		const firstNumber = getRandomInt(9);
+		const secondNumber = getRandomInt(9);
+		const equationValue = firstNumber * secondNumber;
+		const equation = `${firstNumber} x ${secondNumber} = ${equationValue}`;
+		equationObject = { value: equation, evaluated: 'true' };
+		equationsArray.push(equationObject);
+	}
 	// Loop through, mess with the equation results, push to array
-	// for (let i = 0; i < wrongEquations; i++) {
-	//   firstNumber =
-	//   secondNumber =
-	//   const equationValue = firstNumber * secondNumber;
-	//   wrongFormat[0] = `${firstNumber} x ${secondNumber + 1} = ${equationValue}`;
-	//   wrongFormat[1] = `${firstNumber} x ${secondNumber} = ${equationValue - 1}`;
-	//   wrongFormat[2] = `${firstNumber + 1} x ${secondNumber} = ${equationValue}`;
-	//   const formatChoice =
-	//   const equation = wrongFormat[formatChoice];
-	//   equationObject = { value: equation, evaluated: 'false' };
-	//   equationsArray.push(equationObject);
-	// }
+	for (let i = 0; i < wrongEquations; i++) {
+		const firstNumber = getRandomInt(9);
+		const secondNumber = getRandomInt(9);
+		const equationValue = firstNumber * secondNumber;
+		wrongFormat[0] = `${firstNumber} x ${secondNumber + 1} = ${equationValue}`;
+		wrongFormat[1] = `${firstNumber} x ${secondNumber} = ${equationValue - 1}`;
+		wrongFormat[2] = `${firstNumber + 1} x ${secondNumber} = ${equationValue}`;
+		const formatChoice = getRandomInt(3);
+		const equation = wrongFormat[formatChoice];
+		equationObject = { value: equation, evaluated: 'false' };
+		equationsArray.push(equationObject);
+	}
+	shuffle(equationsArray);
 }
 
 // Dynamically adding correct/incorrect equations
@@ -85,7 +99,7 @@ function createEquations() {
 
 // displays countdown
 const countdownStart = () => {
-	const coundownValues = ['3', '2', '1', 'GO!'];
+	const coundownValues = ['Ready?', '3', '2', '1', 'GO!'];
 	coundownValues.forEach((val, i) => {
 		setTimeout(() => {
 			countdown.textContent = val;
