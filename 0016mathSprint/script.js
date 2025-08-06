@@ -51,6 +51,7 @@ const checkTime = () => {
 const addTime = () => {
 	timePlayed += 0.1;
 	checkTime();
+	console.log(timePlayed);
 };
 
 // start timer when game page is clicked
@@ -188,7 +189,7 @@ const getRadioValue = () => {
 // form selection that determines number of questions
 const selectQuestionAmount = (e) => {
 	e.preventDefault();
-	questionAmount = getRadioValue();
+	questionAmount = Number(getRadioValue());
 	questionAmount && showCountdown();
 };
 
