@@ -48,10 +48,14 @@ const playAgain = () => {
 	equationsArray = [];
 	playerGuessArray = [];
 	valueY = 0;
+	playAgainBtn.hidden = true;
 };
 
 // display scores page
 const showScoresPage = () => {
+	setTimeout(() => {
+		playAgainBtn.hidden = false;
+	}, 2000);
 	scorePage.hidden = false;
 	gamePage.hidden = true;
 };
@@ -63,6 +67,7 @@ const scoresToDOM = () => {
 	baseTimeEl.textContent = `Base Time: ${baseTime}s`;
 	penaltyTimeEl.textContent = `Penalty Time: +${penaltyTime}s`;
 	finalTimeEl.textContent = `${finalTimeDisplay}s`;
+	itemContainer.scrollTo({ top: 0, behavior: 'instant' });
 	showScoresPage();
 };
 
