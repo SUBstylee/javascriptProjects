@@ -40,6 +40,22 @@ let finalTimeDisplay = '0.0s';
 // scroll
 let valueY = 0;
 
+// display scores page
+const showScoresPage = () => {
+	scorePage.hidden = false;
+	gamePage.hidden = true;
+};
+
+// format and display time in dom
+const scoresToDOM = () => {
+	finalTimeDisplay = finalTime.toFixed(1);
+	baseTime = timePlayed.toFixed(1);
+	baseTimeEl.textContent = `Base Time: ${baseTime}s`;
+	penaltyTimeEl.textContent = `Penalty Time: +${penaltyTime}s`;
+	finalTimeEl.textContent = `${finalTimeDisplay}s`;
+	showScoresPage();
+};
+
 // stop timer, process results, go to score page
 const checkTime = () => {
 	if (playerGuessArray.length === questionAmount) {
@@ -49,6 +65,7 @@ const checkTime = () => {
 			if (equation.evaluated !== playerGuessArray[i]) penaltyTime++;
 		});
 		finalTime = timePlayed + penaltyTime;
+		scoresToDOM();
 	}
 };
 
