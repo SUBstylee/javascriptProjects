@@ -88,12 +88,30 @@ const updateDOM = () => {
 		createItemEl(onHoldList, 0, onHoldItem, i);
 	});
 	// run getSavedColumns only once, update local storage
+	updatedOnLoad = true;
+	updateSavedColumns();
+};
+
+// update arrays to reflect drag and drop changes
+const rebuildArrays = () => {
+	const listMap = [
+		{ list: backlogList, array: backlogListArray },
+		{ list: progressList, array: progressListArray },
+		{ list: completeList, array: completeListArray },
+		{ list: onHoldList, array: onHoldListArray },
+	];
+	listMap.forEach(({ list, array }) => {
+		array.length = 0;
+		[...list.children].forEach((item) => {
+			array.push(item.textContent);
+		});
+	});
+	updateDOM();
 };
 
 // when item starts dragging
 const drag = (e) => {
 	draggedItem = e.target;
-	console.log(draggedItem);
 };
 
 // column allows item to be dropped
@@ -117,6 +135,7 @@ const drop = (e) => {
 	// add item to column
 	const parent = listColumns[currentColumn];
 	parent.appendChild(draggedItem);
+	rebuildArrays();
 };
 
 updateDOM();
