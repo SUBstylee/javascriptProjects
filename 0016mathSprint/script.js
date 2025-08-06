@@ -35,7 +35,7 @@ let timePlayed = 0;
 let baseTime = 0;
 let penaltyTime = 0;
 let finalTime = 0;
-let finalTimeDisplay = '0.0s';
+let finalTimeDisplay = '0.0';
 
 // best scores
 bestScoreArray = [
@@ -50,8 +50,7 @@ let valueY = 0;
 
 const bestScoresToDOM = () => {
 	bestScores.forEach((element, i) => {
-		element.textContent = bestScoreArray[i].bestScore;
-		console.log(element.textContent);
+		element.textContent = `${bestScoreArray[i].bestScore}s`;
 	});
 };
 
@@ -60,6 +59,7 @@ const getSavedBestScores = () => {
 	localStorage.getItem('bestScores')
 		? (bestScoreArray = JSON.parse(localStorage.bestScores))
 		: localStorage.setItem('bestScores', JSON.stringify(bestScoreArray));
+	bestScoresToDOM();
 };
 
 // reset game
@@ -263,4 +263,3 @@ startForm.addEventListener('click', () => {
 startForm.addEventListener('submit', selectQuestionAmount);
 gamePage.addEventListener('click', startTimer);
 getSavedBestScores();
-bestScoresToDOM();
