@@ -22,7 +22,7 @@ let listArrays = [];
 // drag functionality
 
 // get arrays from localStorage if available, set default values if not
-function getSavedColumns() {
+const getSavedColumns = () => {
 	if (localStorage.getItem('backlogItems')) {
 		backlogListArray = JSON.parse(localStorage.backlogItems);
 		progressListArray = JSON.parse(localStorage.progressItems);
@@ -34,10 +34,10 @@ function getSavedColumns() {
 		completeListArray = ['Being cool', 'Getting stuff done'];
 		onHoldListArray = ['Being uncool'];
 	}
-}
+};
 
 // set localStorage arrays
-function updateSavedColumns() {
+const updateSavedColumns = () => {
 	listArrays = [
 		backlogListArray,
 		progressListArray,
@@ -48,23 +48,19 @@ function updateSavedColumns() {
 	listArrays.forEach((arr, i) => {
 		localStorage.setItem(`${arrayNames[i]}Items`, JSON.stringify(arr));
 	});
-}
+};
 
 // create dom elements for each list item
-function createItemEl(columnEl, column, item, index) {
-	// console.log('columnEl:', columnEl);
-	// console.log('column:', column);
-	// console.log('item:', item);
-	// console.log('index:', index);
+const createItemEl = (columnEl, column, item, index) => {
 	// list item
 	const listEl = document.createElement('li');
 	listEl.classList.add('drag-item');
 	listEl.textContent = item;
 	columnEl.appendChild(listEl);
-}
+};
 
 // update columns in dom - reset html, filter array, update localStorage
-function updateDOM() {
+const updateDOM = () => {
 	// check localStorage once
 	if (!updatedOnLoad) getSavedColumns();
 	// backlog column
@@ -88,6 +84,6 @@ function updateDOM() {
 		createItemEl(onHoldList, 0, onHoldItem, i);
 	});
 	// run getSavedColumns only once, update local storage
-}
+};
 
 updateDOM();
