@@ -72,4 +72,8 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
   Math game that measures time, and keeps score in local storage. Has several views, and dynamically populates questions. Uses Fisher-Yates shuffle for randomization.
 
+- [Project 17: Kanban Board](./0017kanbanBoard/index.html)
+
+  A Kanban Board that uses the drag and drop api. Items on the board persist between sessions using local storage. User can create, update, move (drag and drop), and delete items.
+
   ### More projects will be added soon
