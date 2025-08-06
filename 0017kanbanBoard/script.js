@@ -108,8 +108,9 @@ const updateDOM = () => {
 const updateItem = (id, col) => {
 	const selectedArr = listArrays[col];
 	const selectedColumnEl = listColumns[col].children;
-	selectedColumnEl[id].textContent
-		? (selectedArr[id] = selectedColumnEl[id].textContent)
+	const itemTextContent = selectedColumnEl[id].textContent;
+	itemTextContent
+		? (selectedArr[id] = itemTextContent)
 		: delete selectedArr[id];
 	updateDOM();
 };
