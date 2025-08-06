@@ -73,33 +73,21 @@ const createItemEl = (columnEl, column, item, index) => {
 
 // update columns in dom - reset html, filter array, update localStorage
 const updateDOM = () => {
-	// check localStorage once
 	if (!updatedOnLoad) getSavedColumns();
-	// backlog column
-	backlogList.textContent = '';
-	backlogListArray.forEach((backlogItem, i) => {
-		createItemEl(backlogList, 0, backlogItem, i);
+
+	const listConfigs = [
+		{ list: backlogList, array: backlogListArray, index: 0 },
+		{ list: progressList, array: progressListArray, index: 1 },
+		{ list: completeList, array: completeListArray, index: 2 },
+		{ list: onHoldList, array: onHoldListArray, index: 3 },
+	];
+
+	listConfigs.forEach((config) => {
+		const { list, array, index } = config;
+		list.textContent = '';
+		array.forEach((item, i) => createItemEl(list, index, item, i));
+		array.splice(0, array.length, ...filterArray(array));
 	});
-	backlogListArray = filterArray(backlogListArray);
-	// progress column
-	progressList.textContent = '';
-	progressListArray.forEach((progressItem, i) => {
-		createItemEl(progressList, 1, progressItem, i);
-	});
-	progressListArray = filterArray(progressListArray);
-	// complete column
-	completeList.textContent = '';
-	completeListArray.forEach((completeItem, i) => {
-		createItemEl(completeList, 2, completeItem, i);
-	});
-	completeListArray = filterArray(completeListArray);
-	// on hold column
-	onHoldList.textContent = '';
-	onHoldListArray.forEach((onHoldItem, i) => {
-		createItemEl(onHoldList, 3, onHoldItem, i);
-	});
-	onHoldListArray = filterArray(onHoldListArray);
-	// run getSavedColumns only once, update local storage
 	updatedOnLoad = true;
 	updateSavedColumns();
 };
