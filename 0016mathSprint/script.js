@@ -62,6 +62,19 @@ const getSavedBestScores = () => {
 	bestScoresToDOM();
 };
 
+// update best score array
+const updateBestScore = () => {
+	bestScoreArray.forEach((score, i) => {
+		if (questionAmount === score.questions) {
+			const savedBestScore = Number(bestScoreArray[i].bestScore);
+			if (savedBestScore === 0 || savedBestScore > finalTime)
+				bestScoreArray[i].bestScore = finalTimeDisplay;
+		}
+	});
+	bestScoresToDOM();
+	localStorage.setItem('bestScores', JSON.stringify(bestScoreArray));
+};
+
 // reset game
 const playAgain = () => {
 	gamePage.addEventListener('click', startTimer);
@@ -89,6 +102,7 @@ const scoresToDOM = () => {
 	baseTimeEl.textContent = `Base Time: ${baseTime}s`;
 	penaltyTimeEl.textContent = `Penalty Time: +${penaltyTime}s`;
 	finalTimeEl.textContent = `${finalTimeDisplay}s`;
+	updateBestScore();
 	itemContainer.scrollTo({ top: 0, behavior: 'instant' });
 	showScoresPage();
 };
