@@ -40,6 +40,16 @@ let finalTimeDisplay = '0.0s';
 // scroll
 let valueY = 0;
 
+// reset game
+const playAgain = () => {
+	gamePage.addEventListener('click', startTimer);
+	scorePage.hidden = true;
+	splashPage.hidden = false;
+	equationsArray = [];
+	playerGuessArray = [];
+	valueY = 0;
+};
+
 // display scores page
 const showScoresPage = () => {
 	scorePage.hidden = false;
