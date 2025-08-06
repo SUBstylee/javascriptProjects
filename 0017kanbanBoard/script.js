@@ -60,7 +60,7 @@ function createItemEl(columnEl, column, item, index) {
 	const listEl = document.createElement('li');
 	listEl.classList.add('drag-item');
 	listEl.textContent = item;
-	columnEl.appenChild(listEl);
+	columnEl.appendChild(listEl);
 }
 
 // update columns in dom - reset html, filter array, update localStorage
