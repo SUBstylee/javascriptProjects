@@ -92,18 +92,28 @@ const updateDOM = () => {
 	updateSavedColumns();
 };
 
-// show add item input box
+// add item to column list, reset text box
+const addToColumn = (col) => {
+	const itemText = addItems[col].textContent;
+	const selectedArr = listArrays[col];
+	selectedArr.push(itemText);
+	addItems[col].textContent = '';
+	updateDOM();
+};
+
+// show add item input box and save button, hide add button
 const showInputBox = (col) => {
 	addBtns[col].style.visibility = 'hidden';
 	saveItemBtns[col].style.display = 'flex';
 	addItemContainers[col].style.display = 'flex';
 };
 
-// item input box
+// hide item input box and save button, save text from input, show add button
 const hideInputBox = (col) => {
 	addBtns[col].style.visibility = 'visible';
 	saveItemBtns[col].style.display = 'none';
 	addItemContainers[col].style.display = 'none';
+	addToColumn(col);
 };
 
 // update arrays to reflect drag and drop changes
