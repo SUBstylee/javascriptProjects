@@ -44,6 +44,11 @@ let valueY = 0;
 const checkTime = () => {
 	if (playerGuessArray.length === questionAmount) {
 		clearInterval(timer);
+		// check for wrong guesses, and add penalty time
+		equationsArray.forEach((equation, i) => {
+			if (equation.evaluated !== playerGuessArray[i]) penaltyTime++;
+		});
+		finalTime = timePlayed + penaltyTime;
 	}
 };
 
@@ -51,7 +56,6 @@ const checkTime = () => {
 const addTime = () => {
 	timePlayed += 0.1;
 	checkTime();
-	console.log(timePlayed);
 };
 
 // start timer when game page is clicked
