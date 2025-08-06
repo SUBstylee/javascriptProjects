@@ -92,6 +92,20 @@ const updateDOM = () => {
 	updateSavedColumns();
 };
 
+// show add item input box
+const showInputBox = (col) => {
+	addBtns[col].style.visibility = 'hidden';
+	saveItemBtns[col].style.display = 'flex';
+	addItemContainers[col].style.display = 'flex';
+};
+
+// item input box
+const hideInputBox = (col) => {
+	addBtns[col].style.visibility = 'visible';
+	saveItemBtns[col].style.display = 'none';
+	addItemContainers[col].style.display = 'none';
+};
+
 // update arrays to reflect drag and drop changes
 const rebuildArrays = () => {
 	const listMap = [
