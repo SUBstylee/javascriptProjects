@@ -100,7 +100,7 @@ const updateItem = (id, col) => {
 	itemTextContent
 		? (selectedArr[id] = itemTextContent)
 		: delete selectedArr[id];
-	updateDOM();
+	setTimeout(updateDOM, 0);
 };
 
 // add item to column list, reset text box
