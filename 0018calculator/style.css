@@ -73,6 +73,18 @@ button {
 	background: rgb(199, 199, 199);
 }
 
+button:hover {
+	filter: brightness(110%);
+}
+
+button:active {
+	transform: translateY(1px);
+}
+
+button:focus {
+	outline: none;
+}
+
 .operator {
 	background: #808080;
 	color: #fff;
@@ -82,6 +94,10 @@ button {
 .clear {
 	background: rgb(255, 40, 40);
 	color: #fff;
+}
+
+.clear:hover {
+	filter: brightness(90%);
 }
 
 .equal-sign {
