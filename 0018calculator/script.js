@@ -8,6 +8,12 @@ const sendNumberValue = (number) => {
 		displayValue === '0' ? number : displayValue + number;
 };
 
+const addDecimal = () => {
+	if (!calculatorDisplay.textContent.includes('.')) {
+		calculatorDisplay.textContent = `${calculatorDisplay.textContent}.`;
+	}
+};
+
 // reset display
 const resetAll = () => {
 	calculatorDisplay.textContent = 0;
@@ -20,7 +26,7 @@ inputBtns.forEach((inputBtn) => {
 	} else if (inputBtn.classList.contains('operator')) {
 		inputBtn.addEventListener('click', () => sendNumberValue(inputBtn.value));
 	} else if (inputBtn.classList.contains('decimal')) {
-		inputBtn.addEventListener('click', () => sendNumberValue(inputBtn.value));
+		inputBtn.addEventListener('click', () => addDecimal());
 	}
 });
 
