@@ -26,9 +26,12 @@ const useOperator = (operator) => {
 	operatorValue = operator;
 };
 
-// reset display
+// reset all values and display
 const resetAll = () => {
-	calculatorDisplay.textContent = 0;
+	firstValue = 0;
+	operatorValue = '';
+	awaitingNextValue = false;
+	calculatorDisplay.textContent = '0';
 };
 
 // add event listeners for numbers, operators and decimal buttons
