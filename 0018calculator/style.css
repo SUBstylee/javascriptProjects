@@ -18,6 +18,7 @@ body {
 	box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.6);
 }
 
+/* display */
 .calculator-display {
 	background: #000;
 	color: #00ff00;
@@ -38,7 +39,6 @@ body {
 }
 
 /* custom scrollbar */
-
 ::-webkit-scrollbar {
 	width: 10px;
 }
@@ -53,4 +53,12 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
 	background: #555;
+}
+
+/* buttons */
+.calculator-buttons {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 10px;
+	padding: 10px;
 }
