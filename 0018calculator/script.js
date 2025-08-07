@@ -26,6 +26,7 @@ const addDecimal = () => {
 
 const useOperator = (operator) => {
 	const currentValue = Number(calculatorDisplay.textContent);
+	if (operatorValue && awaitingNextValue) return;
 	if (!firstValue) {
 		firstValue = currentValue;
 	} else {
