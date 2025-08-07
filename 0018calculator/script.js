@@ -35,11 +35,15 @@ const addDecimal = () => {
 
 const useOperator = (operator) => {
 	const currentValue = Number(calculatorDisplay.textContent);
-	if (operatorValue && awaitingNextValue) return;
+	if (operatorValue && awaitingNextValue) {
+		operatorValue = operator;
+		return;
+	}
 	if (!firstValue) {
 		firstValue = currentValue;
 	} else {
 		const calculation = calculate[operatorValue](firstValue, currentValue);
+		firstValue = calculation;
 		calculatorDisplay.textContent = calculation;
 	}
 	awaitingNextValue = true;
