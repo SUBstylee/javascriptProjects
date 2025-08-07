@@ -6,6 +6,15 @@ let firstValue = 0;
 let operatorValue = '';
 let awaitingNextValue = false;
 
+// calculate first and second values by operator
+const calculate = {
+	'/': (firstNumber, secondNumber) => firstNumber / secondNumber,
+	'*': (firstNumber, secondNumber) => firstNumber * secondNumber,
+	'+': (firstNumber, secondNumber) => firstNumber + secondNumber,
+	'-': (firstNumber, secondNumber) => firstNumber - secondNumber,
+	'=': (secondNumber) => secondNumber,
+};
+
 const sendNumberValue = (number) => {
 	if (awaitingNextValue) {
 		calculatorDisplay.textContent = number;
@@ -30,6 +39,8 @@ const useOperator = (operator) => {
 	if (!firstValue) {
 		firstValue = currentValue;
 	} else {
+		const calculation = calculate[operatorValue](firstValue, currentValue);
+		calculatorDisplay.textContent = calculation;
 	}
 	awaitingNextValue = true;
 	operatorValue = operator;
