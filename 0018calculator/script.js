@@ -8,6 +8,11 @@ const sendNumberValue = (number) => {
 		displayValue === '0' ? number : displayValue + number;
 };
 
+// reset display
+const resetAll = () => {
+	calculatorDisplay.textContent = 0;
+};
+
 // add event listeners for numbers, operators and decimal buttons
 inputBtns.forEach((inputBtn) => {
 	if (inputBtn.classList.length === 0) {
@@ -18,3 +23,5 @@ inputBtns.forEach((inputBtn) => {
 		inputBtn.addEventListener('click', () => sendNumberValue(inputBtn.value));
 	}
 });
+
+clearBtn.addEventListener('click', resetAll);
