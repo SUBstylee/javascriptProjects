@@ -18,6 +18,7 @@ const sendNumberValue = (number) => {
 };
 
 const addDecimal = () => {
+	if (awaitingNextValue) return;
 	if (!calculatorDisplay.textContent.includes('.')) {
 		calculatorDisplay.textContent = `${calculatorDisplay.textContent}.`;
 	}
