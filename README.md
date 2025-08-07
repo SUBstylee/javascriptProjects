@@ -76,4 +76,8 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
   A Kanban Board that uses the drag and drop api. Items on the board persist between sessions using local storage. User can create, update, move (drag and drop), and delete items.
 
+- [Project 18: Calculator](./0018calculator/index.html)
+
+  A standard calculator made with vanilla JS, HTML and CSS.
+
   ### More projects will be added soon
