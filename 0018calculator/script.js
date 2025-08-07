@@ -7,9 +7,14 @@ let operatorValue = '';
 let awaitingNextValue = false;
 
 const sendNumberValue = (number) => {
-	const displayValue = calculatorDisplay.textContent;
-	calculatorDisplay.textContent =
-		displayValue === '0' ? number : displayValue + number;
+	if (awaitingNextValue) {
+		calculatorDisplay.textContent = number;
+		awaitingNextValue = false;
+	} else {
+		const displayValue = calculatorDisplay.textContent;
+		calculatorDisplay.textContent =
+			displayValue === '0' ? number : displayValue + number;
+	}
 };
 
 const addDecimal = () => {
@@ -22,7 +27,9 @@ const useOperator = (operator) => {
 	const currentValue = Number(calculatorDisplay.textContent);
 	if (!firstValue) {
 		firstValue = currentValue;
+	} else {
 	}
+	awaitingNextValue = true;
 	operatorValue = operator;
 };
 
