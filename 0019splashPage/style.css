@@ -20,7 +20,7 @@ body {
 .wrapper {
 	position: relative;
 	width: 1440px;
-	min-height: 100vh;
+	height: 1379px;
 	margin: auto;
 	overflow-x: hidden;
 }
@@ -113,10 +113,9 @@ body {
 	filter: drop-shadow(0px 20px 40px rgba(0, 0, 0, 0.25));
 }
 
-.profile-img,
 .orders-img,
 .home-img {
-	height: 444px;
+	height: 470px;
 }
 
 .cart-img,
@@ -129,6 +128,7 @@ body {
 	left: 737px;
 	right: 479px;
 	top: 686px;
+	height: 444px;
 }
 
 .orders-img {
