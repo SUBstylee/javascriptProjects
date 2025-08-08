@@ -1,19 +1,22 @@
 const { body } = document;
 
 const changeBackground = (number) => {
+	let previousBackground;
+	if (body.className) previousBackground = body.className;
+	body.className = '';
 	switch (number) {
 		case '1':
-			body.classList.add('background-1');
-			body.classList.remove('background-2', 'background-3');
-			break;
+			return previousBackground === 'background-1'
+				? null
+				: body.classList.add('background-1');
 		case '2':
-			body.classList.add('background-2');
-			body.classList.remove('background-1', 'background-3');
-			break;
+			return previousBackground === 'background-2'
+				? null
+				: body.classList.add('background-2');
 		case '3':
-			body.classList.add('background-3');
-			body.classList.remove('background-1', 'background-2');
-			break;
+			return previousBackground === 'background-3'
+				? null
+				: body.classList.add('background-3');
 		default:
 			break;
 	}
