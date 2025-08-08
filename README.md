@@ -80,4 +80,8 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
   A standard calculator made with vanilla JS, HTML and CSS.
 
+- [Project 19: Splash Page](./0019spashPage/index.html)
+
+  A splash page for a fake product made with vanilla JS, HTML and CSS.
+
   ### More projects will be added soon
