@@ -79,6 +79,17 @@ body {
 	height: 46.28px;
 }
 
+.main-image-container {
+	position: absolute;
+	left: 683.28px;
+	top: 229.73px;
+}
+
+.main-image-container img {
+	width: 535.72px;
+	height: 309.27px;
+}
+
 /*
 
 
