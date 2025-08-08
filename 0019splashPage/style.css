@@ -16,7 +16,7 @@ body {
 	);
 }
 
-/* Landing Page */
+/* layout */
 .wrapper {
 	position: relative;
 	width: 1440px;
@@ -25,42 +25,58 @@ body {
 	overflow-x: hidden;
 }
 
-.brand-img {
+/* shared absolute positioning */
+.brand-img,
+.title,
+.text,
+.app-store-btn,
+.google-play-btn,
+.main-image-container,
+.profile-img,
+.orders-img,
+.home-img,
+.cart-img,
+.product-img {
 	position: absolute;
-	width: 193px;
-	height: 47.64px;
-	left: 221px;
-	top: 50.25px;
 }
 
+/* title and text */
 .title {
-	position: absolute;
 	width: 458px;
 	height: 135px;
 	left: 221px;
 	top: 236px;
-	font-style: normal;
 	font-weight: 500;
 	font-size: 64px;
 	line-height: 68px;
 }
 
 .text {
-	position: absolute;
 	width: 394px;
 	height: 96px;
 	left: 221px;
 	top: 403px;
-	font-style: normal;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 32px;
 }
 
-.app-store-btn {
-	position: absolute;
+/* brand image */
+.brand-img {
+	width: 193px;
+	height: 47.64px;
 	left: 221px;
+	top: 50.25px;
+}
+
+/* store buttons */
+.app-store-btn,
+.google-play-btn {
 	top: 531px;
+}
+
+.app-store-btn {
+	left: 221px;
 }
 
 .app-store-btn img {
@@ -69,9 +85,7 @@ body {
 }
 
 .google-play-btn {
-	position: absolute;
 	left: 381.81px;
-	top: 531px;
 }
 
 .google-play-btn img {
@@ -79,8 +93,8 @@ body {
 	height: 46.28px;
 }
 
+/* main image */
 .main-image-container {
-	position: absolute;
 	left: 683.28px;
 	top: 229.73px;
 }
@@ -90,10 +104,43 @@ body {
 	height: 309.27px;
 }
 
-/*
+/* images with same size and drop shadow */
+.profile-img,
+.orders-img,
+.home-img,
+.cart-img,
+.product-img {
+	height: 444px;
+	filter: drop-shadow(0px 20px 40px rgba(0, 0, 0, 0.25));
+}
 
+/* individual image positions */
+.profile-img {
+	left: 737px;
+	right: 479px;
+	top: 686px;
+}
 
+.orders-img {
+	left: 479px;
+	right: 737px;
+	top: 913px;
+}
 
+.home-img {
+	left: 995px;
+	right: 221px;
+	top: 908px;
+}
 
+.cart-img {
+	left: 221px;
+	right: 995px;
+	top: 1157px;
+}
 
-*/
+.product-img {
+	left: 737px;
+	right: 479px;
+	top: 1157px;
+}
