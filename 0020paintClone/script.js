@@ -13,6 +13,7 @@ const downloadBtn = document.getElementById('download');
 const { body } = document;
 
 // global variables
+const TIMEOUT_TIME = 1500;
 const canvas = document.createElement('canvas');
 canvas.id = 'canvas';
 const context = canvas.getContext('2d');
@@ -93,7 +94,7 @@ const createCanvas = () => {
 clearCanvasBtn.addEventListener('click', () => {
 	createCanvas();
 	drawnArray = [];
-	activeTool('Canvas Cleared', 1500);
+	activeTool('Canvas Cleared', TIMEOUT_TIME);
 });
 
 // draw what is stored in drawnArray
@@ -171,7 +172,7 @@ canvas.addEventListener('mouseup', () => {
 // save to local storage
 saveStorageBtn.addEventListener('click', () => {
 	localStorage.setItem('savedCanvas', JSON.stringify(drawnArray));
-	activeTool('Canvas Saved', 1500);
+	activeTool('Canvas Saved', TIMEOUT_TIME);
 });
 
 // load from local storage
@@ -179,23 +180,23 @@ loadStorageBtn.addEventListener('click', () => {
 	if (localStorage.getItem('savedCanvas')) {
 		drawnArray = JSON.parse(localStorage.getItem('savedCanvas'));
 		restoreCanvas();
-		activeTool('Canvas Loaded', 1500);
+		activeTool('Canvas Loaded', TIMEOUT_TIME);
 		return;
 	}
-	activeTool('No Saved Canvas Found', 1500);
+	activeTool('No Saved Canvas Found', TIMEOUT_TIME);
 });
 
 // clear local storage
 clearStorageBtn.addEventListener('click', () => {
 	localStorage.removeItem('savedCanvas');
-	activeTool('Local Storage Cleared', 1500);
+	activeTool('Local Storage Cleared', TIMEOUT_TIME);
 });
 
 // download image
 downloadBtn.addEventListener('click', () => {
 	downloadBtn.href = canvas.toDataURL('image/jpeg', 1);
 	downloadBtn.download = 'paint.jpg';
-	activeTool('Image File Saved', 1500);
+	activeTool('Image File Saved', TIMEOUT_TIME);
 });
 
 brushIcon.addEventListener('click', switchToBrush);
