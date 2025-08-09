@@ -167,13 +167,13 @@ canvas.addEventListener('mouseup', () => {
 	console.log('mouse is unclicked');
 });
 
-// // Save to Local Storage
-// saveStorageBtn.addEventListener('click', () => {
-
-//   // Active Tool
-//   activeToolEl.textContent = 'Canvas Saved';
-//   setTimeout(switchToBrush, 1500);
-// });
+// save to local storage
+saveStorageBtn.addEventListener('click', () => {
+	localStorage.setItem('savedCanvas', JSON.stringify(drawnArray));
+	// active tool
+	activeToolEl.textContent = 'Canvas Saved';
+	setTimeout(switchToBrush, 1500);
+});
 
 // // Load from Local Storage
 // loadStorageBtn.addEventListener('click', () => {
