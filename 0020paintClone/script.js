@@ -195,6 +195,8 @@ clearStorageBtn.addEventListener('click', () => {
 
 // download image
 downloadBtn.addEventListener('click', () => {
+	downloadBtn.href = canvas.toDataURL('image/jpeg', 1);
+	downloadBtn.download = 'paint.jpg';
 	activeTool('Image File Saved');
 });
 
