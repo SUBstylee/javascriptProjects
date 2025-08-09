@@ -84,4 +84,8 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
   A splash page for a fake product made with vanilla JS, HTML and CSS.
 
+- [Project 20: Paint Clone](./0020paintClone/index.html)
+
+  Paint clone that uses HTML Canvas, and leverages the JSColor library. Can save art to and clear it from local storage.
+
   ### More projects will be added soon
