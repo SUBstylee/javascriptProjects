@@ -49,12 +49,18 @@ bucketColorBtn.addEventListener('change', () => {
 	restoreCanvas();
 });
 
+// display active tool message and switch to brush if timeout included
+const activeTool = (msg, timeout) => {
+	activeToolEl.textContent = msg;
+	timeout && setTimeout(switchToBrush, timeout);
+};
+
 // eraser
 eraser.addEventListener('click', () => {
 	isEraser = true;
 	brushIcon.style.color = 'white';
 	eraser.style.color = 'black';
-	activeToolEl.textContent = 'Eraser';
+	activeTool('Eraser');
 	currentColor = bucketColor;
 	currentSize = 50;
 	brushSlider.value = 50;
@@ -64,7 +70,7 @@ eraser.addEventListener('click', () => {
 // switch back to brush
 const switchToBrush = () => {
 	isEraser = false;
-	activeToolEl.textContent = 'Brush';
+	activeTool('Brush');
 	brushIcon.style.color = 'black';
 	eraser.style.color = 'white';
 	currentColor = `#${brushColorBtn.value}`;
@@ -83,17 +89,11 @@ const createCanvas = () => {
 	switchToBrush();
 };
 
-// display active tool message and switch to brush
-const activeTool = (msg) => {
-	activeToolEl.textContent = msg;
-	setTimeout(switchToBrush, 1500);
-};
-
 // clear canvas
 clearCanvasBtn.addEventListener('click', () => {
 	createCanvas();
 	drawnArray = [];
-	activeTool('Canvas Cleared');
+	activeTool('Canvas Cleared', 1500);
 });
 
 // draw what is stored in drawnArray
@@ -171,7 +171,7 @@ canvas.addEventListener('mouseup', () => {
 // save to local storage
 saveStorageBtn.addEventListener('click', () => {
 	localStorage.setItem('savedCanvas', JSON.stringify(drawnArray));
-	activeTool('Canvas Saved');
+	activeTool('Canvas Saved', 1500);
 });
 
 // load from local storage
@@ -179,23 +179,23 @@ loadStorageBtn.addEventListener('click', () => {
 	if (localStorage.getItem('savedCanvas')) {
 		drawnArray = JSON.parse(localStorage.getItem('savedCanvas'));
 		restoreCanvas();
-		activeTool('Canvas Loaded');
+		activeTool('Canvas Loaded', 1500);
 		return;
 	}
-	activeTool('No Saved Canvas Found');
+	activeTool('No Saved Canvas Found', 1500);
 });
 
 // clear local storage
 clearStorageBtn.addEventListener('click', () => {
 	localStorage.removeItem('savedCanvas');
-	activeTool('Local Storage Cleared');
+	activeTool('Local Storage Cleared', 1500);
 });
 
 // download image
 downloadBtn.addEventListener('click', () => {
 	downloadBtn.href = canvas.toDataURL('image/jpeg', 1);
 	downloadBtn.download = 'paint.jpg';
-	activeTool('Image File Saved');
+	activeTool('Image File Saved', 1500);
 });
 
 brushIcon.addEventListener('click', switchToBrush);
