@@ -23,15 +23,18 @@ let isEraser = false;
 // let isMouseDown = false;
 // let drawnArray = [];
 
-// Formatting Brush Size
-// const displayBrushSize=()=> {
+// formatting brush size
+const displayBrushSize = () => {
+	brushSlider.value < 10
+		? (brushSize.textContent = `0${brushSlider.value}`)
+		: (brushSize.textContent = brushSlider.value);
+};
 
-// }
-
-// Setting Brush Size
-// brushSlider.addEventListener('change', () => {
-
-// });
+// setting brush size
+brushSlider.addEventListener('change', () => {
+	currentSize = brushSlider.value;
+	displayBrushSize();
+});
 
 // setting brush color
 brushColorBtn.addEventListener('change', () => {
@@ -53,6 +56,8 @@ eraser.addEventListener('click', () => {
 	activeToolEl.textContent = 'Eraser';
 	currentColor = bucketColor;
 	currentSize = 50;
+	brushSlider.value = 50;
+	displayBrushSize();
 });
 
 // switch back to brush
@@ -63,6 +68,8 @@ const switchToBrush = () => {
 	eraser.style.color = 'white';
 	currentColor = `#${brushColorBtn.value}`;
 	currentSize = 10;
+	brushSlider.value = 10;
+	displayBrushSize();
 };
 
 // create canvas
@@ -72,6 +79,7 @@ const createCanvas = () => {
 	context.fillStyle = bucketColor;
 	context.fillRect(0, 0, canvas.width, canvas.height);
 	body.appendChild(canvas);
+	switchToBrush();
 };
 
 // // Clear Canvas
@@ -113,7 +121,7 @@ const createCanvas = () => {
 //   drawnArray.push(line);
 // }
 
-// Get Mouse Position
+// get mouse position
 const getMousePosition = (event) => {
 	const boundaries = canvas.getBoundingClientRect();
 	return {
@@ -153,7 +161,7 @@ canvas.addEventListener('mousemove', (event) => {
 	}
 });
 
-// Mouse Up
+// mouse up
 canvas.addEventListener('mouseup', () => {
 	isMouseDown = false;
 	console.log('mouse is unclicked');
@@ -195,8 +203,6 @@ canvas.addEventListener('mouseup', () => {
 //   setTimeout(switchToBrush, 1500);
 // });
 
-// // Event Listener
-// brushIcon.addEventListener('click', switchToBrush);
+brushIcon.addEventListener('click', switchToBrush);
 
-// On Load
 createCanvas();
