@@ -52,18 +52,18 @@ eraser.addEventListener('click', () => {
 	eraser.style.color = 'black';
 	activeToolEl.textContent = 'Eraser';
 	currentColor = bucketColor;
+	currentSize = 50;
 });
 
-// // Switch back to Brush
-// const switchToBrush=()=> {
-//   isEraser = false;
-//   activeToolEl.textContent = 'Brush';
-//   brushIcon.style.color = 'black';
-//   eraser.style.color = 'white';
-//   currentColor = `#${brushColorBtn.value}`;
-//   currentSize = 10;
-
-// }
+// switch back to brush
+const switchToBrush = () => {
+	isEraser = false;
+	activeToolEl.textContent = 'Brush';
+	brushIcon.style.color = 'black';
+	eraser.style.color = 'white';
+	currentColor = `#${brushColorBtn.value}`;
+	currentSize = 10;
+};
 
 // create canvas
 const createCanvas = () => {
