@@ -38,10 +38,11 @@ let currentColor = '#A51DAB';
 
 // });
 
-// Setting Background Color
-// bucketColorBtn.addEventListener('change', () => {
-
-// });
+// setting background color
+bucketColorBtn.addEventListener('change', () => {
+	bucketColor = `#${bucketColorBtn.value}`;
+	createCanvas();
+});
 
 // // Eraser
 // eraser.addEventListener('click', () => {
@@ -63,7 +64,7 @@ let currentColor = '#A51DAB';
 
 // }
 
-// Create Canvas
+// create canvas
 const createCanvas = () => {
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight - 50;
