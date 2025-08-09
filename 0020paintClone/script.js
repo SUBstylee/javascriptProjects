@@ -50,10 +50,9 @@ bucketColorBtn.addEventListener('change', () => {
 	restoreCanvas();
 });
 
-// display active tool message and switch to brush if timeout included
-const activeTool = (msg, timeout) => {
+// display active tool message
+const setActiveTool = (msg) => {
 	activeToolEl.textContent = msg;
-	timeout && setTimeout(switchToBrush, timeout);
 };
 
 // eraser
@@ -61,7 +60,7 @@ eraser.addEventListener('click', () => {
 	isEraser = true;
 	brushIcon.style.color = 'white';
 	eraser.style.color = 'black';
-	activeTool('Eraser');
+	setActiveTool('Eraser');
 	currentColor = bucketColor;
 	currentSize = 50;
 	brushSlider.value = 50;
@@ -71,13 +70,19 @@ eraser.addEventListener('click', () => {
 // switch back to brush
 const switchToBrush = () => {
 	isEraser = false;
-	activeTool('Brush');
+	setActiveTool('Brush');
 	brushIcon.style.color = 'black';
 	eraser.style.color = 'white';
 	currentColor = `#${brushColorBtn.value}`;
 	currentSize = 10;
 	brushSlider.value = 10;
 	displayBrushSize();
+};
+
+// set active tool, with a timeout to switch to brush
+const setActiveToolTimeout = (msg, timeout) => {
+	setActiveTool(msg);
+	setTimeout(switchToBrush, timeout);
 };
 
 // create canvas
@@ -94,7 +99,7 @@ const createCanvas = () => {
 clearCanvasBtn.addEventListener('click', () => {
 	createCanvas();
 	drawnArray = [];
-	activeTool('Canvas Cleared', TIMEOUT_TIME);
+	setActiveToolTimeout('Canvas Cleared', TIMEOUT_TIME);
 });
 
 // draw what is stored in drawnArray
@@ -172,7 +177,7 @@ canvas.addEventListener('mouseup', () => {
 // save to local storage
 saveStorageBtn.addEventListener('click', () => {
 	localStorage.setItem('savedCanvas', JSON.stringify(drawnArray));
-	activeTool('Canvas Saved', TIMEOUT_TIME);
+	setActiveToolTimeout('Canvas Saved', TIMEOUT_TIME);
 });
 
 // load from local storage
@@ -180,23 +185,23 @@ loadStorageBtn.addEventListener('click', () => {
 	if (localStorage.getItem('savedCanvas')) {
 		drawnArray = JSON.parse(localStorage.getItem('savedCanvas'));
 		restoreCanvas();
-		activeTool('Canvas Loaded', TIMEOUT_TIME);
+		setActiveToolTimeout('Canvas Loaded', TIMEOUT_TIME);
 		return;
 	}
-	activeTool('No Saved Canvas Found', TIMEOUT_TIME);
+	setActiveToolTimeout('No Saved Canvas Found', TIMEOUT_TIME);
 });
 
 // clear local storage
 clearStorageBtn.addEventListener('click', () => {
 	localStorage.removeItem('savedCanvas');
-	activeTool('Local Storage Cleared', TIMEOUT_TIME);
+	setActiveToolTimeout('Local Storage Cleared', TIMEOUT_TIME);
 });
 
 // download image
 downloadBtn.addEventListener('click', () => {
 	downloadBtn.href = canvas.toDataURL('image/jpeg', 1);
 	downloadBtn.download = 'paint.jpg';
-	activeTool('Image File Saved', TIMEOUT_TIME);
+	setActiveToolTimeout('Image File Saved', TIMEOUT_TIME);
 });
 
 brushIcon.addEventListener('click', switchToBrush);
