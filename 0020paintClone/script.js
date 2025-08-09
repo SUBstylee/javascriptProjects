@@ -83,6 +83,7 @@ const createCanvas = () => {
 	switchToBrush();
 };
 
+// display active tool message and switch to brush
 const activeTool = (msg) => {
 	activeToolEl.textContent = msg;
 	setTimeout(switchToBrush, 1500);
@@ -121,7 +122,6 @@ const storeDrawn = (x, y, size, color, erase) => {
 		color,
 		erase,
 	};
-	console.log(line);
 	drawnArray.push(line);
 };
 
@@ -149,7 +149,6 @@ canvas.addEventListener('mousedown', (event) => {
 canvas.addEventListener('mousemove', (event) => {
 	if (isMouseDown) {
 		const currentPosition = getMousePosition(event);
-		console.log('mouse is moving', currentPosition);
 		context.lineTo(currentPosition.x, currentPosition.y);
 		context.stroke();
 		storeDrawn(
@@ -167,7 +166,6 @@ canvas.addEventListener('mousemove', (event) => {
 // mouse up
 canvas.addEventListener('mouseup', () => {
 	isMouseDown = false;
-	console.log('mouse is unclicked');
 });
 
 // save to local storage
