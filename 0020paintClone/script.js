@@ -65,10 +65,10 @@ let currentColor = '#A51DAB';
 
 // Create Canvas
 const createCanvas = () => {
-	canvas.width = ;
-	canvas.height = ;
-	context.fillStyle = ;
-	context.fillRect();
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight - 50;
+	context.fillStyle = bucketColor;
+	context.fillRect(0, 0, canvas.width, canvas.height);
 	body.appendChild(canvas);
 };
 
@@ -112,13 +112,13 @@ const createCanvas = () => {
 // }
 
 // Get Mouse Position
-const getMousePosition=(event)=> {
+const getMousePosition = (event) => {
 	const boundaries = canvas.getBoundingClientRect();
 	return {
 		x: event.clientX - boundaries.left,
 		y: event.clientY - boundaries.top,
 	};
-}
+};
 
 // Mouse Down
 canvas.addEventListener('mousedown', (event) => {
