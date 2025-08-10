@@ -9,9 +9,10 @@ const canvasPosition = screenWidth / 2 - width / 2;
 const isMobile = window.matchMedia('(max-width: 600px)');
 const gameOverEl = document.createElement('div');
 
-// global
+// colors
 const mainColor = '#0DCE57';
 const secondaryColor = '#098336ff';
+const bgColor = '#111';
 
 // paddle
 const paddleHeight = 10;
@@ -54,7 +55,7 @@ const winningScore = 7;
 // render everything on vanvas
 function renderCanvas() {
 	// canvas background
-	context.fillStyle = 'black';
+	context.fillStyle = bgColor;
 	context.fillRect(0, 0, width, height);
 	// paddle color
 	context.fillStyle = mainColor;
@@ -75,9 +76,9 @@ function renderCanvas() {
 	context.fillStyle = mainColor;
 	context.fill();
 	// score
-	// context.font = '32px Courier New';
-	// context.fillText(playerScore, 20, canvas.height / 2 + 50);
-	// context.fillText(computerScore, 20, canvas.height / 2 - 30);
+	context.font = '32px Courier New';
+	context.fillText(playerScore, 20, canvas.height / 2 + 50);
+	context.fillText(computerScore, 20, canvas.height / 2 - 30);
 }
 
 // create canvas element
