@@ -1,6 +1,7 @@
 // canvas
 const { body } = document;
-
+const canvas = document.createElement('canvas');
+const context = canvas.getContext('2d');
 const width = 500;
 const height = 700;
 const screenWidth = window.screen.width;
@@ -49,8 +50,8 @@ const winningScore = 7;
 // render everything on vanvas
 function renderCanvas() {
 	// canvas background
-	// context.fillStyle = 'black';
-	// context.fillRect(0, 0, width, height);
+	context.fillStyle = 'black';
+	context.fillRect(0, 0, width, height);
 	// paddle color
 	// context.fillStyle = 'white';
 	// player paddle (bottom)
@@ -184,7 +185,7 @@ function showGameOverEl(winner) {
 
 // check if one player has winning score, if they do, end game
 function gameOver() {
-	// if (playerScore === winningScore || computerScore === winningScore) {
+	// if ((playerScore >= winningScore && playerScore > computerScore+1) || (computerScore >= winningScore && computerScore > playerScore+1)) {
 	//   isGameOver = ;
 	//   // set Winner
 	//   let winner = ;
