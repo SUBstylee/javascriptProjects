@@ -49,11 +49,11 @@ if (isMobile.matches) {
 let playerScore = 0;
 let computerScore = 0;
 const winningScore = 7;
-// let isGameOver = true;
-// let isNewGame = true;
+let isGameOver = true;
+let isNewGame = true;
 
 // render everything on vanvas
-function renderCanvas() {
+const renderCanvas = () => {
 	// canvas background
 	context.fillStyle = bgColor;
 	context.fillRect(0, 0, width, height);
@@ -80,39 +80,36 @@ function renderCanvas() {
 	context.fillStyle = secondaryColor;
 	context.fillText(playerScore, 20, canvas.height / 2 + 50);
 	context.fillText(computerScore, 20, canvas.height / 2 - 30);
-}
+};
 
 // create canvas element
-function createCanvas() {
+const createCanvas = () => {
 	canvas.width = width;
 	canvas.height = height;
 	body.appendChild(canvas);
 	renderCanvas();
-}
-
-// remove this
-createCanvas();
+};
 
 // reset ball to center
-function ballReset() {
+const ballReset = () => {
 	ballX = width / 2;
 	ballY = height / 2;
 	speedY = -3;
 	paddleContact = false;
-}
+};
 
 // adjust ball movement
-function ballMove() {
+const ballMove = () => {
 	// vertical speed
 	ballY += -speedY;
 	// horizontal speed
 	if (playerMoved && paddleContact) {
 		ballX += speedX;
 	}
-}
+};
 
 // determine what ball bounces off, score points, reset ball
-function ballBoundaries() {
+const ballBoundaries = () => {
 	// Bounce off Left Wall
 	if (ballX < 0 && speedX < 0) {
 		speedX = -speedX;
@@ -161,10 +158,10 @@ function ballBoundaries() {
 			playerScore++;
 		}
 	}
-}
+};
 
 // computer movement
-function computerAI() {
+const computerAI = () => {
 	if (playerMoved) {
 		if (paddleTopX + paddleDiff < ballX) {
 			paddleTopX += computerSpeed;
@@ -172,49 +169,57 @@ function computerAI() {
 			paddleTopX -= computerSpeed;
 		}
 	}
-}
+};
 
-function showGameOverEl(winner) {
+const showGameOverEl = (winner) => {
 	// hide canvas
-	// // container
-	// gameOverEl.textContent = '';
-	// gameOverEl.classList.add('game-over-container');
-	// // title
-	// const title = document.createElement('h1');
-	// title.textContent = `${winner} Wins!`;
-	// // button
-	// const playAgainBtn = document.createElement('button');
-	// playAgainBtn.setAttribute('onclick', 'startGame()');
-	// playAgainBtn.textContent = 'Play Again';
-	// // append
-}
+	canvas.hidden = true;
+	// container
+	gameOverEl.textContent = '';
+	gameOverEl.classList.add('game-over-container');
+	// title
+	const title = document.createElement('h1');
+	title.textContent = `${winner} Wins!`;
+	// button
+	const playAgainBtn = document.createElement('button');
+	playAgainBtn.setAttribute('onclick', 'startGame()');
+	playAgainBtn.textContent = 'Play Again';
+	// append
+	gameOverEl.append(title, playAgainBtn);
+	body.appendChild(gameOverEl);
+};
 
 // check if one player has winning score, if they do, end game
-function gameOver() {
-	// if ((playerScore >= winningScore && playerScore > computerScore+1) || (computerScore >= winningScore && computerScore > playerScore+1)) {
-	//   isGameOver = ;
-	//   // set Winner
-	//   let winner = ;
-	//   showGameOverEl(winner);
-	// }
-}
+const gameOver = () => {
+	if (
+		(playerScore >= winningScore && playerScore > computerScore + 1) ||
+		(computerScore >= winningScore && computerScore > playerScore + 1)
+	) {
+		isGameOver = true;
+		// set Winner
+		let winner = playerScore > computerScore ? 'Player 1' : 'Computer';
+		showGameOverEl(winner);
+	}
+};
 
 // called every frame
-function animate() {
+const animate = () => {
 	renderCanvas();
 	ballMove();
 	ballBoundaries();
 	computerAI();
-	window.requestAnimationFrame(animate);
-}
+	gameOver();
+	if (!isGameOver) window.requestAnimationFrame(animate);
+};
 
 // start game, reset everything
-function startGame() {
-	// if (isGameOver && !isNewGame) {
-
-	// }
-	// isGameOver = ;
-	// isNewGame = ;
+const startGame = () => {
+	if (isGameOver && !isNewGame) {
+		body.removeChild(gameOverEl);
+		canvas.hidden = false;
+	}
+	isGameOver = false;
+	isNewGame = false;
 	playerScore = 0;
 	computerScore = 0;
 	ballReset();
@@ -233,6 +238,6 @@ function startGame() {
 		// hide cursor
 		canvas.style.cursor = 'none';
 	});
-}
+};
 
 startGame();
