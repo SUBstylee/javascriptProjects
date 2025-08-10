@@ -92,4 +92,8 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
   Pong game that uses HTML Canvas. Player vs Computer. Win conditions are 7 or more points, and leading by 2 or more points. Must be played in full screen width, or HTML Canvas has issues.
 
+- [Project 22: Expanding Cards](./0022expandingCards/index.html)
+
+  A small interactive project built with HTML, CSS, and JavaScript. It uses querySelectorAll and event listeners to toggle classes on click, with a CSS transition for smooth, animated style changes.
+
   ### More projects will be added soon
