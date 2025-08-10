@@ -88,4 +88,8 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
   Paint clone that uses HTML Canvas, and leverages the JSColor library. Can save art to and clear it from local storage. A user can also download a JPEG of their drawing.
 
+- [Project 21: Pong](./0021pong/index.html)
+
+  Pong game that uses HTML Canvas. Player vs Computer. Win conditions are 7 or more points, and leading by 2 or more points.
+
   ### More projects will be added soon
