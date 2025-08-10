@@ -7,15 +7,14 @@
 	box-sizing: border-box;
 }
 
-html,
 body {
-	height: 100%;
-}
-
-body {
-	line-height: 1.5;
-	-webkit-font-smoothing: antialiased;
 	font-family: Roboto, sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	height: 100vh;
 }
 
 img,
