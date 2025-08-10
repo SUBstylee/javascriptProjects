@@ -90,6 +90,6 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
 - [Project 21: Pong](./0021pong/index.html)
 
-  Pong game that uses HTML Canvas. Player vs Computer. Win conditions are 7 or more points, and leading by 2 or more points.
+  Pong game that uses HTML Canvas. Player vs Computer. Win conditions are 7 or more points, and leading by 2 or more points. Must be played in full screen width, or HTML Canvas has issues.
 
   ### More projects will be added soon
