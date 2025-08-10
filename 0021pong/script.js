@@ -9,6 +9,9 @@ const canvasPosition = screenWidth / 2 - width / 2;
 const isMobile = window.matchMedia('(max-width: 600px)');
 const gameOverEl = document.createElement('div');
 
+// global
+const mainColor = '#0DCE57';
+
 // paddle
 const paddleHeight = 10;
 const paddleWidth = 50;
@@ -53,11 +56,11 @@ function renderCanvas() {
 	context.fillStyle = 'black';
 	context.fillRect(0, 0, width, height);
 	// paddle color
-	// context.fillStyle = 'white';
+	context.fillStyle = mainColor;
 	// player paddle (bottom)
-	// context.fillRect(paddleBottomX, height - 20, paddleWidth, paddleHeight);
+	context.fillRect(paddleBottomX, height - 20, paddleWidth, paddleHeight);
 	// computer paddle (top)
-	// context.fillRect(paddleTopX, 10, paddleWidth, paddleHeight);
+	context.fillRect(paddleTopX, 10, paddleWidth, paddleHeight);
 	// dashed center line
 	// context.beginPath();
 	// context.setLineDash([4]);
