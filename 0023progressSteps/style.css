@@ -124,6 +124,7 @@ h6 {
 .btn:active {
 	transform: scale(0.98);
 }
+/* UI looks better with this, but poor accessibility is the trade-off. will leave in but commented out */
 /* .btn:focus {
 	outline: 0;
 } */
