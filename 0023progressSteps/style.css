@@ -127,3 +127,12 @@ h6 {
 .btn:focus {
 	outline: 0;
 }
+
+.btn:disabled {
+	background-color: var(--empty);
+	color: var(--dark);
+	cursor: not-allowed;
+}
+.btn:disabled:hover {
+	filter: brightness(1);
+}
