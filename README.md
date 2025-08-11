@@ -96,4 +96,8 @@ A collection of smaller JavaScript projects, each organized in its own folder. T
 
   A small interactive project built with HTML, CSS, and JavaScript. It uses querySelectorAll and event listeners to toggle classes on click, with a CSS transition for smooth, animated style changes.
 
+- [Project 23: Progress Steps](./0023progressSteps/index.html)
+
+  A small interactive project built with HTML, CSS, and JavaScript. It uses querySelectorAll and event listeners to toggle classes on click, with a CSS transition for smooth, animated style changes.
+
   ### More projects will be added soon
