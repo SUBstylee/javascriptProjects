@@ -7,5 +7,9 @@ let currentActive = 1;
 const maxSteps = circles.length;
 const splitPercent = 100 / (circles.length - 1);
 
+const moveStep = (dir) => {
+	dir === 'prev' ? currentActive-- : currentActive++;
+};
+
 prev.addEventListener('click', () => moveStep('prev'));
 next.addEventListener('click', () => moveStep('next'));
