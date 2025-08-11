@@ -13,6 +13,11 @@ const moveStep = (dir) => {
 	currentActive = Math.max(1, Math.min(currentActive, maxSteps)); // keeps currentActive in range, even if a user programatically gets past the disabled button, and triggers moveStep
 	currentActive === 1 ? (prev.disabled = true) : (prev.disabled = false);
 	currentActive === maxSteps ? (next.disabled = true) : (next.disabled = false);
+	circles.forEach((circle, i) => {
+		i <= currentActive - 1
+			? circle.classList.add('active')
+			: circle.classList.remove('active');
+	});
 };
 
 prev.addEventListener('click', () => moveStep('prev'));
