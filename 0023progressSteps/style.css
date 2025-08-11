@@ -4,6 +4,7 @@
 	--active: #3498db;
 	--empty: #e0e0e0;
 	--white: #fff;
+	--dark: #222;
 	--bg-color: #f6f7fb;
 	--font-color: #999;
 }
@@ -115,4 +116,14 @@ h6 {
 	padding: 8px 30px;
 	margin: 5px;
 	font-size: 0.9rem;
+}
+
+.btn:hover {
+	filter: brightness(1.2);
+}
+.btn:active {
+	transform: scale(0.98);
+}
+.btn:focus {
+	outline: 0;
 }
