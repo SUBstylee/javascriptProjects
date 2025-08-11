@@ -10,6 +10,7 @@ const splitPercent = 100 / (circles.length - 1);
 const moveStep = (dir) => {
 	if (dir !== 'prev' && dir !== 'next') return; // in case something triggers moveStep with an unexpected value
 	dir === 'prev' ? currentActive-- : currentActive++;
+	currentActive = Math.max(1, Math.min(currentActive, maxSteps)); // keeps currentActive in range, even if a user programatically gets past the disabled button, and triggers moveStep
 };
 
 prev.addEventListener('click', () => moveStep('prev'));
