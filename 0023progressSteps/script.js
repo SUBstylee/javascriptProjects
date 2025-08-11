@@ -38,6 +38,11 @@ const moveStep = (dir) => {
 
 prev.addEventListener('click', () => moveStep('prev'));
 next.addEventListener('click', () => moveStep('next'));
+// added keydown event listener for accessiblity. clamping comes in handy in this usecase as well
+document.addEventListener('keydown', (e) => {
+	if (e.key === 'ArrowLeft') moveStep('prev');
+	if (e.key === 'ArrowRight') moveStep('next');
+});
 
 updateButtons();
 updateUI();
