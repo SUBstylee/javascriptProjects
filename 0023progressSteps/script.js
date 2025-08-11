@@ -14,8 +14,8 @@ const stepClamp = () => {
 
 // toggle disabled if the beginning or ending of the step range is reached
 const updateButtons = () => {
-	currentActive === 1 ? (prev.disabled = true) : (prev.disabled = false);
-	currentActive === maxSteps ? (next.disabled = true) : (next.disabled = false);
+	prev.disabled = currentActive === 1;
+	next.disabled = currentActive === maxSteps;
 };
 
 // highlight the current and previously finished steps, adjust width of progress bar
