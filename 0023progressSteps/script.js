@@ -38,3 +38,6 @@ const moveStep = (dir) => {
 
 prev.addEventListener('click', () => moveStep('prev'));
 next.addEventListener('click', () => moveStep('next'));
+
+updateButtons();
+updateUI();
