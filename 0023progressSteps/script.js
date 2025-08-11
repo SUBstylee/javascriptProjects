@@ -21,9 +21,7 @@ const updateButtons = () => {
 // highlight the current and previously finished steps, adjust width of progress bar
 const updateUI = () => {
 	circles.forEach((circle, i) => {
-		i <= currentActive - 1
-			? circle.classList.add('active')
-			: circle.classList.remove('active');
+		circle.classList.toggle('active', i <= currentActive - 1);
 	});
 	progress.style.width = `${(currentActive - 1) * splitPercent}%`;
 };
