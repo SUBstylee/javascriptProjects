@@ -18,6 +18,7 @@ const moveStep = (dir) => {
 			? circle.classList.add('active')
 			: circle.classList.remove('active');
 	});
+	progress.style.width = `${(currentActive - 1) * splitPercent}%`;
 };
 
 prev.addEventListener('click', () => moveStep('prev'));
