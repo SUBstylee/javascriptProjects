@@ -9,10 +9,10 @@
 
 body {
 	font-family: Lato, sans-serif;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	background-color: #333;
+	color: #222;
+	overflow-x: hidden;
+	/* height: 100vh; */
 }
 
 img,
@@ -39,4 +39,17 @@ h4,
 h5,
 h6 {
 	overflow-wrap: break-word;
+}
+
+.container {
+	background-color: #fafafa;
+	transform-origin: top left;
+	transition: transform 0.5s linear;
+	width: 100vw;
+	min-height: 100vh;
+	padding: 80px 50px 50px;
+}
+
+.container.show-nav {
+	transform: rotate(-20deg);
 }
