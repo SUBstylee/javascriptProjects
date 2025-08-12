@@ -3,6 +3,12 @@
 :root {
 	--transition-speed: 0.5s;
 	--transition-timing: linear;
+	--color-bg: #fafafa;
+	--color-md-gray: #555;
+	--color-dark: #333;
+	--color-darker: #222;
+	--color-white: #fff;
+	--color-accent: #ff7979;
 }
 
 /* Basic CSS Reset */
@@ -14,8 +20,8 @@
 
 body {
 	font-family: Lato, sans-serif;
-	background-color: #333;
-	color: #222;
+	background-color: var(--color-dark);
+	color: var(--color-darker);
 	overflow-x: hidden;
 	/* height: 100vh; */
 }
@@ -47,7 +53,7 @@ h6 {
 }
 
 .container {
-	background-color: #fafafa;
+	background-color: var(--color-bg);
 	transform-origin: top left;
 	transition: transform var(--transition-speed) var(--transition-timing);
 	width: 100vw;
@@ -66,7 +72,7 @@ h6 {
 }
 
 .circle {
-	background-color: #ff7979;
+	background-color: var(--color-accent);
 	height: 200px;
 	width: 200px;
 	border-radius: 50%;
@@ -86,7 +92,7 @@ button {
 	background: transparent;
 	border: 0;
 	font-size: 26px;
-	color: #fff;
+	color: var(--color-white);
 	cursor: pointer;
 }
 
@@ -119,7 +125,7 @@ nav ul {
 
 nav ul li {
 	text-transform: uppercase;
-	color: #fff;
+	color: var(--color-white);
 	margin: 40px 0;
 	transform: translateX(-100%);
 	transition: transform 0.4s ease-in;
@@ -150,12 +156,12 @@ nav ul li i {
 }
 
 .content small {
-	color: #555;
+	color: var(--color-md-gray);
 	font-style: italic;
 }
 
 .content p {
-	color: #333;
+	color: var(--color-dark);
 	line-height: 1.5;
 	margin: 20px 0 0;
 }
