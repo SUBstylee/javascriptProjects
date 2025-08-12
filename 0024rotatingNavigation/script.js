@@ -1,3 +1,4 @@
+const container = document.querySelector('.container');
 document
 	.getElementById('open')
 	.addEventListener('click', () => container.classList.add('show-nav'));
