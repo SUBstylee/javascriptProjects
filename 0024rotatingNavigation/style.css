@@ -151,10 +151,6 @@ nav ul li i {
 	margin: 50px auto;
 }
 
-.content img {
-	max-width: 100%;
-}
-
 .content small {
 	color: var(--color-md-gray);
 	font-style: italic;
