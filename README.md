@@ -92,4 +92,8 @@
 
   A small interactive project built with HTML, CSS, and JavaScript. It uses querySelectorAll and event listeners to toggle classes on button click as well as left and right arrow keydown, with a CSS transition for smooth, animated style changes.
 
+- [Project 24: Rotating Navigation](https://substylee.github.io/javascriptProjects/0024rotatingNavigation/index.html)
+
+  A small interactive project built with HTML, CSS, and JavaScript. It uses event listeners on open and close buttons to toggle a navigation menu that rotates into view. Smooth CSS transitions and transforms create a dynamic rotating effect for both the menu and the main content area, enhancing the user experience with engaging animations.
+
   ### More projects will be added soon
