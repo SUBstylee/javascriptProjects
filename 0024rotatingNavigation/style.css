@@ -47,7 +47,7 @@ h6 {
 	transition: transform 0.5s linear;
 	width: 100vw;
 	min-height: 100vh;
-	padding: 80px 50px 50px;
+	padding: 50px;
 }
 
 .container.show-nav {
@@ -93,4 +93,24 @@ h6 {
 
 .content img {
 	max-width: 100%;
+}
+
+.content {
+	max-width: 1000px;
+	margin: 50px auto;
+}
+
+.content small {
+	color: #555;
+	font-style: italic;
+}
+
+.content p {
+	color: #333;
+	line-height: 1.5;
+	margin: 20px 0 0;
+}
+
+.content h3 {
+	margin: 10px 0 10px;
 }
