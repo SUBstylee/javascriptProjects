@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+:root {
+	--transition-speed: 0.5s;
+	--transition-timing: linear;
+}
+
 /* Basic CSS Reset */
 * {
 	margin: 0;
@@ -44,7 +49,7 @@ h6 {
 .container {
 	background-color: #fafafa;
 	transform-origin: top left;
-	transition: transform 0.5s linear;
+	transition: transform var(--transition-speed) var(--transition-timing);
 	width: 100vw;
 	min-height: 100vh;
 	padding: 50px;
@@ -66,7 +71,7 @@ h6 {
 	width: 200px;
 	border-radius: 50%;
 	position: relative;
-	transition: transform 0.5s linear;
+	transition: transform var(--transition-speed) var(--transition-timing);
 }
 
 .container.show-nav + .circle-container {
