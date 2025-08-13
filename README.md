@@ -100,4 +100,8 @@
 
   A small interactive search widget built with HTML, CSS, and JavaScript. It features a toggleable search input with smooth transitions, accessible keyboard controls, and focus management for a seamless user experience.
 
+- [Project 26: Blurry Loading](https://substylee.github.io/javascriptProjects/0026blurryLoading/index.html)
+
+  A smooth loading screen with a background that gradually sharpens and a fading percentage counter, creating a polished and engaging visual effect.
+
   ### More projects will be added soon
