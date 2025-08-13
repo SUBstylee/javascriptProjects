@@ -53,10 +53,13 @@ h6 {
 	width: calc(100vw + 60px);
 	height: calc(100vh + 60px);
 	z-index: -1;
-	filter: blur(0px);
+	filter: blur(30px);
+	transition: filter 0.2s ease;
 }
 
 .loading-text {
 	font-size: 50px;
 	color: #fff;
+	opacity: 1;
+	transition: opacity 0.2s ease;
 }
