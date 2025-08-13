@@ -26,7 +26,6 @@ const animate = () => {
 	loadText.innerText = `${load}%`;
 	loadText.style.opacity = scale(load, 0, MAX_LOAD, 1, 0);
 	bgImg.style.filter = `blur(${scale(load, 0, MAX_LOAD, MAX_BLUR, 0)}px)`;
-	console.log(load);
 	// instead of setInterval, using requestAnimationFrame recursively for smoother animations
 	requestAnimationFrame(animate);
 };
