@@ -96,4 +96,8 @@
 
   A small interactive project built with HTML, CSS, and JavaScript. It uses event listeners on open and close buttons to toggle a navigation menu that rotates into view. Smooth CSS transitions and transforms create a dynamic rotating effect for both the menu and the main content area, enhancing the user experience with engaging animations.
 
+- [Project 25: Hidden Search Widget](https://substylee.github.io/javascriptProjects/0025hiddenSearchWidget/index.html)
+
+  A small interactive search widget built with HTML, CSS, and JavaScript. It features a toggleable search input with smooth transitions, accessible keyboard controls, and focus management for a seamless user experience.
+
   ### More projects will be added soon
