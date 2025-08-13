@@ -104,4 +104,8 @@
 
   A smooth loading screen with a background that gradually sharpens and a fading percentage counter, creating a polished and engaging visual effect.
 
+- [Project 27: Scroll Animation](https://substylee.github.io/javascriptProjects/0027scrollAnimation/index.html)
+
+  description
+
   ### More projects will be added soon
