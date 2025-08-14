@@ -20,7 +20,16 @@ for (let i = 1; i <= numBoxes; i++) {
 const boxes = document.querySelectorAll('.box');
 
 const checkBoxes = () => {
-	console.log(window.innerHeight);
+	// set the triggerBottom to be less than innerHeight of window, so user can see the transition animation clearly
+	const triggerBottom = (window.innerHeight / 5) * 4;
+	boxes.forEach((box) => {
+		// get the top of box rectangle to compare with triggerBottom
+		const boxTop = box.getBoundingClientRect().top;
+		// add show, box animates into viewport. remove show, box animates out of viewport
+		boxTop < triggerBottom
+			? box.classList.add('show')
+			: box.classList.remove('show');
+	});
 };
 
 window.addEventListener('scroll', checkBoxes);
