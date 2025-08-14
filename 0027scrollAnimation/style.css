@@ -46,6 +46,13 @@ h1 {
 	margin: 10px;
 }
 
+.box-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
 .box {
 	background-color: #4682b4;
 	color: #fff;
@@ -71,6 +78,6 @@ h1 {
 	transform: translateX(0);
 }
 
-.box.h2 {
+.box h2 {
 	font-size: 45px;
 }
