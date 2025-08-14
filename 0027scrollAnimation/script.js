@@ -6,12 +6,12 @@ const heading = document.createElement('h1');
 heading.textContent = 'Scroll to see the animation';
 document.body.appendChild(heading);
 
-// create a container for all the boxes and append to body
+// create a container with class to contain all the boxes and append to body
 const container = document.createElement('div');
 container.classList.add('box-container');
 document.body.appendChild(container);
 
-// create numBoxes boxes, and append each box to the container
+// create numBoxes boxes, applying class, appending h2 with text content, and appending each box to the container
 for (let i = 1; i <= numBoxes; i++) {
 	const box = document.createElement('div');
 	box.classList.add('box');
