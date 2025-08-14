@@ -58,13 +58,13 @@ h1 {
 	border-radius: 10px;
 	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 	/* move the elements off screen, to the right */
-	transform: translateX(600%);
-	transition: transform 0.6s ease;
+	transform: translateX(400%);
+	transition: transform 0.3s ease;
 }
 
 /* target every other/even elements of this class and move them off screen, to the left */
 .box:nth-of-type(even) {
-	transform: translateX(-600%);
+	transform: translateX(-400%);
 }
 
 .box.show {
