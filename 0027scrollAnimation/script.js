@@ -18,3 +18,9 @@ for (let i = 1; i <= numBoxes; i++) {
 
 // make an array containing all the boxes
 const boxes = document.querySelectorAll('.box');
+
+const checkBoxes = () => {
+	console.log(window.innerHeight);
+};
+
+window.addEventListener('scroll', checkBoxes);
