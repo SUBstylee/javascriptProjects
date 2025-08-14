@@ -15,3 +15,6 @@ for (let i = 1; i <= numBoxes; i++) {
 	box.appendChild(boxText);
 	document.body.appendChild(box);
 }
+
+// make an array containing all the boxes
+const boxes = document.querySelectorAll('.box');
