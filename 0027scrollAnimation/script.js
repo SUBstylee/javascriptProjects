@@ -6,7 +6,12 @@ const heading = document.createElement('h1');
 heading.textContent = 'Scroll to see the animation';
 document.body.appendChild(heading);
 
-// create numBoxes boxes, and append to body
+// create a container for all the boxes and append to body
+const container = document.createElement('div');
+container.classList.add('box-container');
+document.body.appendChild(container);
+
+// create numBoxes boxes, and append each box to the container
 for (let i = 1; i <= numBoxes; i++) {
 	const box = document.createElement('div');
 	box.classList.add('box');
@@ -33,3 +38,6 @@ const checkBoxes = () => {
 };
 
 window.addEventListener('scroll', checkBoxes);
+
+// run checkBoxes on page load so that there is some content before scrolling starts
+checkBoxes();
