@@ -66,3 +66,7 @@ h1 {
 .box:nth-of-type(even) {
 	transform: translateX(-600%);
 }
+
+.box.show {
+	transform: translateX(0);
+}
