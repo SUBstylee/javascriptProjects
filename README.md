@@ -106,6 +106,6 @@
 
 - [Project 27: Scroll Animation](https://substylee.github.io/javascriptProjects/0027scrollAnimation/index.html)
 
-  description
+  A fully dynamic scroll animation where all elements are created via JavaScript. Smooth transitions and flexible layout are handled with CSS classes.
 
   ### More projects will be added soon
