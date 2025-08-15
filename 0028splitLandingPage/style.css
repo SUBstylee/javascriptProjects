@@ -65,10 +65,6 @@ h6 {
 }
 
 .split.left::before {
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 100%;
 	background-color: var(--left-bg-color);
 }
 
@@ -78,10 +74,6 @@ h6 {
 }
 
 .split.right::before {
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 100%;
 	background-color: var(--right-bg-color);
 }
 
@@ -89,4 +81,12 @@ h6 {
 .split.right {
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+.split.left::before,
+.split.right::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
 }
