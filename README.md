@@ -108,4 +108,8 @@
 
   A fully dynamic scroll animation where all elements are created via JavaScript. Smooth transitions and flexible layout are handled with CSS classes.
 
+- [Project 28: Split Landing Page](https://substylee.github.io/javascriptProjects/0028splitLandingPage/index.html)
+
+  A split landing page that listens for mouse events to show more of one product or the other.
+
   ### More projects will be added soon
