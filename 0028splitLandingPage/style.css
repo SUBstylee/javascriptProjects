@@ -9,6 +9,7 @@
 	--white: #fff;
 	--hover-width: 75%;
 	--other-width: 25%;
+	--transition-speed: 0.5s;
 }
 
 /* Basic CSS Reset */
@@ -132,6 +133,13 @@ h1 {
 	position: absolute;
 	width: 100%;
 	height: 100%;
+}
+
+.split.left,
+.split.right,
+.split.left::before,
+.split.right::before {
+	transition: all var(--transition-speed) ease-in-out;
 }
 
 .hover-left .left {
