@@ -56,13 +56,15 @@ h6 {
 .split.left {
 	left: 0;
 	background: url('ps.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
 }
 
 .split.right {
 	right: 0;
 	background: url('xbox.jpg');
+}
+
+.split.left,
+.split.right {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
