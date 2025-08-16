@@ -81,6 +81,10 @@ h6 {
 	transform: scale(0.98);
 }
 
+.text {
+	margin-top: 30px;
+}
+
 .form-control {
 	position: relative;
 	margin: 20px 0 40px;
@@ -101,4 +105,11 @@ h6 {
 .form-control input:focus,
 .form-control input:valid {
 	outline: 0;
+}
+
+.form-control label {
+	position: absolute;
+	top: 15px;
+	left: 0;
+	font-size: 16px;
 }
