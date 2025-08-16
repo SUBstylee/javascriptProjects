@@ -112,6 +112,8 @@ h6 {
 	top: 15px;
 	left: 0;
 	font-size: 16px;
+	user-select: none;
+	pointer-events: none;
 }
 
 .form-control label span {
