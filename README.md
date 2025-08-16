@@ -112,4 +112,8 @@
 
   A split landing page that listens for mouse events to show more of one product or the other.
 
+- [Project 29: Form Wave Animation](https://substylee.github.io/javascriptProjects/0029formWaveAnimation/index.html)
+
+  A form where the labels animate on the Y-Axis, in a wave, depending on the status of the input.
+
   ### More projects will be added soon
