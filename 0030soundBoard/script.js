@@ -1,18 +1,13 @@
 const sounds = ['applause', 'boo', 'gasp', 'tada', 'victory', 'wrong'];
-const audioElements = [];
 const audioFragment = document.createDocumentFragment();
 const btnFragment = document.createDocumentFragment();
 
 const stopAudio = () => {
-	audioElements.forEach((audio) => {
+	document.querySelectorAll('audio').forEach((audio) => {
 		audio.pause();
 		audio.currentTime = 0;
 	});
 };
-
-const btns = document.createElement('div');
-btns.id = 'buttons';
-document.body.appendChild(btns);
 
 const createSoundItem = (sound) => {
 	// audio element
@@ -20,7 +15,6 @@ const createSoundItem = (sound) => {
 	audio.src = `sounds/${sound}.mp3`;
 	audio.id = sound;
 	audio.preload = 'auto';
-	audioElements.push(audio);
 	// button element
 	const btn = document.createElement('button');
 	btn.classList.add('btn');
@@ -29,6 +23,7 @@ const createSoundItem = (sound) => {
 		stopAudio();
 		audio.play();
 	});
+	return { audio, btn };
 };
 
 sounds.forEach((sound) => {
@@ -36,3 +31,10 @@ sounds.forEach((sound) => {
 	audioFragment.appendChild(audio);
 	btnFragment.appendChild(btn);
 });
+
+const btns = document.createElement('div');
+btns.id = 'buttons';
+document.body.appendChild(btns);
+
+document.body.appendChild(audioFragment);
+btns.appendChild(btnFragment);
