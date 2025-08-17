@@ -12,12 +12,14 @@ const btns = document.createElement('div');
 btns.id = 'buttons';
 document.body.appendChild(btns);
 
-sounds.forEach((sound) => {
+const createSoundItem = (sound) => {
+	// audio element
 	const audio = document.createElement('audio');
 	audio.src = `sounds/${sound}.mp3`;
 	audio.id = sound;
-	document.body.appendChild(audio);
+	audio.preload = 'auto';
 	audioElements.push(audio);
+	// button element
 	const btn = document.createElement('button');
 	btn.classList.add('btn');
 	btn.innerText = sound;
@@ -25,5 +27,6 @@ sounds.forEach((sound) => {
 		stopAudio();
 		audio.play();
 	});
-	btns.appendChild(btn);
-});
+};
+
+sounds.forEach((sound) => {});
