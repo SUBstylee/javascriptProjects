@@ -16,13 +16,14 @@ sounds.forEach((sound) => {
 	const audio = document.createElement('audio');
 	audio.src = `sounds/${sound}.mp3`;
 	audio.id = sound;
+	document.body.appendChild(audio);
 	audioElements.push(audio);
 	const btn = document.createElement('button');
 	btn.classList.add('btn');
 	btn.innerText = sound;
 	btn.addEventListener('click', () => {
 		stopAudio();
-		document.getElementById(sound).play();
+		audio.play();
 	});
 	document.getElementById('buttons').appendChild(btn);
 });
