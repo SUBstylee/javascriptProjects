@@ -8,6 +8,10 @@ const stopAudio = () => {
 	});
 };
 
+const btns = document.createElement('div');
+btns.id = 'buttons';
+document.body.appendChild(btns);
+
 sounds.forEach((sound) => {
 	const btn = document.createElement('button');
 	btn.classList.add('btn');
