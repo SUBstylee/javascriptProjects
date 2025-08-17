@@ -13,6 +13,10 @@ btns.id = 'buttons';
 document.body.appendChild(btns);
 
 sounds.forEach((sound) => {
+	const audio = document.createElement('audio');
+	audio.src = `sounds/${sound}.mp3`;
+	audio.id = sound;
+	document.body.appendChild(audio);
 	const btn = document.createElement('button');
 	btn.classList.add('btn');
 	btn.innerText = sound;
