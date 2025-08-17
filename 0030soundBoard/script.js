@@ -1,8 +1,8 @@
 const sounds = ['applause', 'boo', 'gasp', 'tada', 'victory', 'wrong'];
+const audioElements = [];
 
 const stopAudio = () => {
-	sounds.forEach((sound) => {
-		const audio = document.getElementById(sound);
+	audioElements.forEach((audio) => {
 		audio.pause();
 		audio.currentTime = 0;
 	});
@@ -16,7 +16,7 @@ sounds.forEach((sound) => {
 	const audio = document.createElement('audio');
 	audio.src = `sounds/${sound}.mp3`;
 	audio.id = sound;
-	document.body.appendChild(audio);
+	audioElements.push(audio);
 	const btn = document.createElement('button');
 	btn.classList.add('btn');
 	btn.innerText = sound;
