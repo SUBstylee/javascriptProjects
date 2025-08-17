@@ -116,4 +116,10 @@
 
   A form where the labels animate on the Y-Axis, in a wave, depending on the status of the input.
 
-  ### More projects will be added soon
+- [Project 30: Sound Board](https://substylee.github.io/javascriptProjects/0030soundBoard/index.html)
+
+  A sound board that plays sounds when buttons are clicked. It uses HTML
+  audio elements, and dynamically creates buttons for each sound. It
+  also stops any currently playing sound before playing a new one.
+
+## More projects will be added soon

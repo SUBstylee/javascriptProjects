@@ -310,8 +310,27 @@
 					the status of the input.
 				</p>
 			</div>
+			<div class="project-link">
+				<hr />
+				<a href="./0030soundBoard/index.html" target="_blank"
+					>Project 30: Sound Board</a
+				>
+				<p>
+					A sound board that plays sounds when buttons are clicked. It uses HTML
+					audio elements, and dynamically creates buttons for each sound. It
+					also stops any currently playing sound before playing a new one.
+				</p>
+			</div>
 			<hr />
 		</div>
 		<h4>More projects will be added soon!</h4>
 	</body>
 </html>
+<!--
+Buttons that play sounds when clicked. Uses the HTML Audio API to play sounds,
+and the Document Fragment API to create audio and button elements dynamically.
+The audio elements are created in a loop, and appended to the document body. The
+buttons are also created in a loop, and appended to a div with the id "buttons".
+The audio elements are paused and reset when a new sound is played, to prevent
+multiple sounds from playing at once.
+-->
