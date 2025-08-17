@@ -1,4 +1,4 @@
-## Projects
+# Projects
 
 - [Project 1: Quote Generator](https://substylee.github.io/javascriptProjects/0001quoteGenerator/index.html)
 
