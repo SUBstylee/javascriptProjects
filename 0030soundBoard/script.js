@@ -1,5 +1,7 @@
 const sounds = ['applause', 'boo', 'gasp', 'tada', 'victory', 'wrong'];
 const audioElements = [];
+const audioFragment = document.createDocumentFragment();
+const btnFragment = document.createDocumentFragment();
 
 const stopAudio = () => {
 	audioElements.forEach((audio) => {
@@ -29,4 +31,8 @@ const createSoundItem = (sound) => {
 	});
 };
 
-sounds.forEach((sound) => {});
+sounds.forEach((sound) => {
+	const { audio, btn } = createSoundItem(sound);
+	audioFragment.appendChild(audio);
+	btnFragment.appendChild(btn);
+});
