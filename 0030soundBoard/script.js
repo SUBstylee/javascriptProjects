@@ -25,5 +25,5 @@ sounds.forEach((sound) => {
 		stopAudio();
 		audio.play();
 	});
-	document.getElementById('buttons').appendChild(btn);
+	btns.appendChild(btn);
 });
