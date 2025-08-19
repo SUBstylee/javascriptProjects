@@ -6,10 +6,14 @@ const fetchJoke = async () => {
 		headers: { Accept: 'application/json' },
 	};
 
-	const res = await fetch('https://icanhazdadjoke.com', config);
-	const data = await res.json();
-
-	return data.joke;
+	try {
+		const res = await fetch('https://icanhazdadjoke.com', config);
+		const data = await res.json();
+		return data.joke;
+	} catch (error) {
+		console.error(error);
+		return 'Something went wrong, try again later...';
+	}
 };
 
 const generateJoke = async () => {
