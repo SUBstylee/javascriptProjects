@@ -54,3 +54,8 @@ h6 {
 	max-width: 100%;
 	width: 800px;
 }
+
+h3 {
+	opacity: 0.5;
+	letter-spacing: 2px;
+}
