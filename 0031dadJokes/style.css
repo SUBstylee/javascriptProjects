@@ -67,3 +67,15 @@ h3 {
 	margin: 50px auto;
 	max-width: 600px;
 }
+
+.btn {
+	background-color: #9f68e0;
+	color: #fff;
+	border: 0;
+	border-radius: 10px;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+	transition: box-shadow 0.3s ease;
+}
