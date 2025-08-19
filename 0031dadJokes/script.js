@@ -12,14 +12,16 @@ const fetchJoke = async () => {
 		return data.joke;
 	} catch (error) {
 		console.error(error);
-		return 'Something went wrong, try again later...';
+		return null;
 	}
 };
 
 const generateJoke = async () => {
-	jokeEl.innerHTML = await fetchJoke();
+	jokeEl.textContent = 'Loading joke...';
+	const joke = await fetchJoke();
+	jokeEl.textContent = joke ?? 'Something went wrong, try again later...';
 };
 
-jokeBtn.addEventListener('click', () => generateJoke());
+jokeBtn.addEventListener('click', generateJoke);
 
 generateJoke();
