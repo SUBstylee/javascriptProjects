@@ -122,4 +122,8 @@
   audio elements, and dynamically creates buttons for each sound. It
   also stops any currently playing sound before playing a new one.
 
+- [Project 31: Dad Jokes](https://substylee.github.io/javascriptProjects/0031dadJokes/index.html)
+
+  A simple dad jokes generator that fetches jokes from an API and displays them on the page. It includes a button to fetch a new joke and uses local storage to save favorite jokes.
+
 ## More projects will be added soon
