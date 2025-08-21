@@ -44,6 +44,13 @@ h6 {
 	overflow-wrap: break-word;
 }
 
+#insert {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+}
+
 .key {
 	border: 1px solid #999;
 	background-color: #eee;
