@@ -126,4 +126,10 @@
 
   A simple dad jokes generator that fetches jokes from an API and displays them on the page. It includes a button to fetch a new joke.
 
+- [Project 32: Event KeyCodes](https://substylee.github.io/javascriptProjects/0032eventKeyCodes/index.html)
+
+  A simple application that displays the key codes of keyboard events
+  as you type. It provides a visual representation of the key codes
+  being triggered.
+
 ## More projects will be added soon
