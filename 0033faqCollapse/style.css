@@ -86,3 +86,16 @@ h1 {
 	top: 20px;
 	left: 20px;
 }
+
+.faq-title {
+	margin: 0 35px 0 0;
+}
+
+.faq-text {
+	display: none;
+	margin: 30px 0 0;
+}
+
+.faq.active .faq-text {
+	display: block;
+}
