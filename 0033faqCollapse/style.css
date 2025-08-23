@@ -47,6 +47,7 @@ h1 {
 	max-width: 600px;
 	margin: 0 auto;
 }
+
 .faq {
 	background-color: transparent;
 	border: 1px solid #9fa4a8;
@@ -56,4 +57,9 @@ h1 {
 	position: relative;
 	overflow: hidden;
 	transition: 0.3s ease;
+}
+
+.faq.active {
+	background-color: #fff;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
 }
