@@ -132,4 +132,10 @@
   as you type. It provides a visual representation of the key codes
   being triggered.
 
+- [Project 33: Faq Collapse](https://substylee.github.io/javascriptProjects/0033faqCollapse/index.html)
+
+  A FAQ section where each question can be clicked to reveal or hide
+  the answer. It uses JavaScript to toggle the visibility of the answer
+  and change the icon accordingly.
+
 ## More projects will be added soon
