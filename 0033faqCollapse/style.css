@@ -63,3 +63,26 @@ h1 {
 	background-color: #fff;
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
 }
+
+.faq.active::before,
+.faq.active::after {
+	content: '\f075';
+	font-family: 'Font Awesome 5 Free';
+	font-size: 7rem;
+	position: absolute;
+	opacity: 0.2;
+	z-index: 0;
+}
+
+.faq.active::before {
+	color: #3498db;
+	top: -10px;
+	left: -30px;
+	transform: rotateY(180deg);
+}
+
+.faq.active::after {
+	color: #2ecc71;
+	top: 20px;
+	left: 20px;
+}
