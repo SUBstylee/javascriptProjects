@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
 
 /* Basic CSS Reset */
 * {
@@ -9,7 +9,7 @@
 
 body {
 	background-color: #2b88f0;
-	font-family: Roboto, sans-serif;
+	font-family: Muli, sans-serif;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -42,4 +42,9 @@ h4,
 h5,
 h6 {
 	overflow-wrap: break-word;
+}
+
+h3 {
+	color: #fff;
+	margin: 10px 0 20px;
 }
