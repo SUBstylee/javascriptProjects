@@ -12,12 +12,21 @@ const createTags = (input) => {
 	tagsEl.innerHTML = '';
 	tags.forEach((tag) => {
 		const tagEl = document.createElement('span');
-		tagEl.className = 'tag';
+		tagEl.classList.add('tag');
 		tagEl.innerText = tag;
 		tagsEl.appendChild(tagEl);
 	});
 };
 
+const randomSelect = () => {};
+
 textarea.addEventListener('keyup', (e) => {
 	createTags(e.target.value);
+
+	if (e.key === 'Enter') {
+		setTimeout(() => {
+			e.target.value = '';
+		}, 10);
+		randomSelect();
+	}
 });
