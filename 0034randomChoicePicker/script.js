@@ -27,7 +27,7 @@ const highlightTag = (tag) => {
 	tag.classList.add('highlight');
 };
 
-const removeHiglightTag = (tag) => {
+const removeHighlightTag = (tag) => {
 	tag.classList.remove('highlight');
 };
 
@@ -38,7 +38,7 @@ const randomSelect = () => {
 		const randomTag = pickRandomTag();
 		highlightTag(randomTag);
 		setTimeout(() => {
-			removeHiglightTag(randomTag);
+			removeHighlightTag(randomTag);
 		}, 100);
 	}, 100);
 
