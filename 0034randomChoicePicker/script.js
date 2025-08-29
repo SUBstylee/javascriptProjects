@@ -39,6 +39,7 @@ const removeHighlightTag = (tag) => {
 
 const randomSelect = () => {
 	isSelecting = true;
+	textarea.setAttribute('readonly', true);
 
 	const interval = setInterval(() => {
 		const randomTag = pickRandomTag();
@@ -55,6 +56,7 @@ const randomSelect = () => {
 			const randomTag = pickRandomTag();
 			if (randomTag) highlightTag(randomTag);
 			isSelecting = false;
+			textarea.removeAttribute('readonly');
 		}, INTERVAL_MS);
 	}, HIGHLIGHT_COUNT * INTERVAL_MS);
 };
