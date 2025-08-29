@@ -3,6 +3,8 @@ const textarea = document.getElementById('textarea');
 
 textarea.focus();
 
+let isSelecting = false;
+
 const HIGHLIGHT_COUNT = 30;
 const INTERVAL_MS = 100;
 
@@ -36,7 +38,7 @@ const removeHighlightTag = (tag) => {
 };
 
 const randomSelect = () => {
-	textarea.disabled = true;
+	isSelecting = true;
 
 	const interval = setInterval(() => {
 		const randomTag = pickRandomTag();
@@ -52,12 +54,13 @@ const randomSelect = () => {
 		setTimeout(() => {
 			const randomTag = pickRandomTag();
 			if (randomTag) highlightTag(randomTag);
-			textarea.disabled = false;
+			isSelecting = false;
 		}, INTERVAL_MS);
 	}, HIGHLIGHT_COUNT * INTERVAL_MS);
 };
 
 textarea.addEventListener('keyup', (e) => {
+	if (isSelecting) return;
 	createTags(e.target.value);
 
 	if (e.key === 'Enter') {
