@@ -138,4 +138,8 @@
   the answer. It uses JavaScript to toggle the visibility of the answer
   and change the icon accordingly.
 
+- [Project 34: Random Choice Picker](https://substylee.github.io/javascriptProjects/0034randomChoicePicker/index.html)
+
+  A random choice picker that allows users to input options and randomly selects one when the Enter key is pressed.
+
 ## More projects will be added soon
