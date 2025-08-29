@@ -6,6 +6,12 @@ textarea.focus();
 const HIGHLIGHT_COUNT = 30;
 const INTERVAL_MS = 100;
 
+const pickRandomTag = () => {
+	const tags = document.querySelectorAll('.tag');
+	if (tags.length === 0) return null;
+	return tags[Math.floor(Math.random() * tags.length)];
+};
+
 const createTags = (input) => {
 	const tags = input
 		.split(',')
@@ -21,11 +27,6 @@ const createTags = (input) => {
 	});
 };
 
-const pickRandomTag = () => {
-	const tags = document.querySelectorAll('.tag');
-	return tags[Math.floor(Math.random() * tags.length)];
-};
-
 const highlightTag = (tag) => {
 	tag.classList.add('highlight');
 };
@@ -36,8 +37,10 @@ const removeHighlightTag = (tag) => {
 
 const randomSelect = () => {
 	textarea.disabled = true;
+
 	const interval = setInterval(() => {
 		const randomTag = pickRandomTag();
+		if (!randomTag) return;
 		highlightTag(randomTag);
 		setTimeout(() => {
 			removeHighlightTag(randomTag);
@@ -48,7 +51,7 @@ const randomSelect = () => {
 		clearInterval(interval);
 		setTimeout(() => {
 			const randomTag = pickRandomTag();
-			highlightTag(randomTag);
+			if (randomTag) highlightTag(randomTag);
 			textarea.disabled = false;
 		}, INTERVAL_MS);
 	}, HIGHLIGHT_COUNT * INTERVAL_MS);
