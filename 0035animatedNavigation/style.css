@@ -101,3 +101,17 @@ nav ul a {
 	height: 30px;
 	width: 30px;
 }
+
+.icon .line {
+	background-color: #5290f9;
+	height: 2px;
+	width: 20px;
+	position: absolute;
+	top: 10px;
+	left: 5px;
+}
+
+.icon .line2 {
+	top: auto;
+	bottom: 10px;
+}
