@@ -1,22 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
 
+:root {
+	--color-bg-light: #eafbff;
+	--color-bg-dark: #5290f9;
+	--color-white: #fff;
+	--color-primary: #5290f9;
+	--color-text: #000;
+	--font-family: 'Muli', sans-serif;
+	--spacing-padding: 20px;
+	--nav-width-collapsed: 80px;
+	--nav-width-expanded: 350px;
+	--icon-size: 30px;
+	--icon-line-width: 20px;
+	--icon-line-height: 2px;
+	--transition-time: 0.6s;
+	--transition-timing: linear;
+}
+
 /* Basic CSS Reset */
-* {
+*,
+img,
+picture,
+video,
+canvas,
+svg,
+input,
+button,
+textarea,
+select,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font: inherit;
+	overflow-wrap: break-word;
 }
 
 body {
-	background-color: #eafbff;
+	background-color: var(--color-bg-light);
 	background-image: linear-gradient(
 		to bottom,
-		#eafbff 0%,
-		#eafbff 50%,
-		#5290f9 50%,
-		#5290f9 100%
+		var(--color-bg-light) 0%,
+		var(--color-bg-light) 50%,
+		var(--color-bg-dark) 50%,
+		var(--color-bg-dark) 100%
 	);
-	font-family: Muli, sans-serif;
+	font-family: var(--font-family);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -32,43 +67,27 @@ svg {
 	max-width: 100%;
 }
 
-input,
-button,
-textarea,
-select {
-	font: inherit;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	overflow-wrap: break-word;
-}
-
 nav {
-	background-color: #fff;
-	padding: 20px;
-	width: 80px;
+	background-color: var(--color-white);
+	padding: var(--spacing-padding);
+	width: var(--nav-width-collapsed);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	border-radius: 3px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-	transition: width 0.6s linear;
+	transition: width var(--transition-time) var(--transition-timing);
 }
 
 nav.active {
-	width: 350px;
+	width: var(--nav-width-expanded);
 }
+
 nav ul {
 	display: flex;
-	list-style-type: none;
+	list-style: none;
 	width: 0;
-	transition: width 0.6s linear;
+	transition: width var(--transition-time) var(--transition-timing);
 }
 
 nav.active ul {
@@ -78,7 +97,8 @@ nav.active ul {
 nav ul li {
 	transform: rotateY(0deg);
 	opacity: 0;
-	transition: transform 0.6s linear, opacity 0.6s linear;
+	transition: transform var(--transition-time) var(--transition-timing),
+		opacity var(--transition-time) var(--transition-timing);
 }
 
 nav.active ul li {
@@ -88,33 +108,36 @@ nav.active ul li {
 
 nav ul a {
 	position: relative;
-	color: #000;
+	color: var(--color-text);
 	text-decoration: none;
 	margin: 0 10px;
 }
 
 .icon {
-	background-color: #fff;
-	border: 0;
+	background-color: var(--color-white);
+	border: none;
 	cursor: pointer;
 	position: relative;
-	height: 30px;
-	width: 30px;
+	height: var(--icon-size);
+	width: var(--icon-size);
 }
 
 .icon .line {
-	background-color: #5290f9;
-	height: 2px;
-	width: 20px;
+	background-color: var(--color-primary);
+	height: var(--icon-line-height);
+	width: var(--icon-line-width);
 	position: absolute;
-	top: 10px;
 	left: 5px;
-	transition: transform 0.6s linear;
+	transition: transform var(--transition-time) var(--transition-timing);
+}
+
+.icon .line1 {
+	top: 10px;
 }
 
 .icon .line2 {
-	top: auto;
 	bottom: 10px;
+	top: auto;
 }
 
 nav.active .icon .line1 {
