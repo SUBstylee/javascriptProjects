@@ -142,4 +142,10 @@
 
   A random choice picker that allows users to input options and randomly selects one when the Enter key is pressed.
 
+- [Project 35: Animated Navigation](https://substylee.github.io/javascriptProjects/0035animatedNavigation/index.html)
+
+  A navigation menu that animates its items when button is clicked, creating a smooth
+  and engaging user experience. The button also contains an icon that changes
+  animation state when clicked.
+
 ## More projects will be added soon
