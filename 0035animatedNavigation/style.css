@@ -76,6 +76,7 @@ nav {
 	justify-content: center;
 	border-radius: 3px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
 	transition: width var(--transition-time) var(--transition-timing);
 }
 
