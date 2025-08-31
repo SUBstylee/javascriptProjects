@@ -56,3 +56,9 @@ h6 {
 	font-size: 60px;
 	margin-top: 10px;
 }
+
+@media (max-width: 750px) {
+	body {
+		flex-direction: column;
+	}
+}
