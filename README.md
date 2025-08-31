@@ -148,4 +148,9 @@
   and engaging user experience. The button also contains an icon that changes
   animation state when clicked.
 
+- [Project 36: Increment Counter](https://substylee.github.io/javascriptProjects/0036incrementCounter/index.html)
+
+  A simple increment counter that increases the count until the target number is reached.
+  It demonstrates the use of event listeners and DOM manipulation.
+
 ## More projects will be added soon
