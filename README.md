@@ -153,4 +153,10 @@
   A simple increment counter that increases the count until the target number is reached.
   It demonstrates the use of event listeners and DOM manipulation.
 
+- [Project 37: Drink Water](https://substylee.github.io/javascriptProjects/0037drinkWater/index.html)
+
+  A simple application that helps users track their water intake.
+  It allows users to select how many glasses of water they have consumed
+  and displays the remaining amount needed to reach their goal.
+
 ## More projects will be added soon
