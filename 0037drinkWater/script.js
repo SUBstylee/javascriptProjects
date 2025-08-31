@@ -6,9 +6,7 @@ const remaining = document.getElementById('remaining');
 
 const updateBigCup = () => {
 	const fullCups = document.querySelectorAll('.cup-small.full').length;
-	console.log(fullCups);
 	const totalCups = smallCups.length;
-	console.log(totalCups);
 	const bigCupHeight = bigCup.offsetHeight;
 
 	if (fullCups === 0) {
@@ -30,7 +28,6 @@ const updateBigCup = () => {
 };
 
 const highlightCups = (idx) => {
-	console.log('clicked');
 	if (
 		smallCups[idx].classList.contains('full') &&
 		(idx === smallCups.length - 1 ||
@@ -38,13 +35,13 @@ const highlightCups = (idx) => {
 	) {
 		idx--;
 	}
+
 	smallCups.forEach((cup, idx2) => {
 		if (idx2 <= idx) {
 			cup.classList.add('full');
 		} else {
 			cup.classList.remove('full');
 		}
-		console.log(cup.classList);
 	});
 
 	updateBigCup();
