@@ -43,3 +43,11 @@ h5,
 h6 {
 	overflow-wrap: break-word;
 }
+
+.counter-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 30px 50px;
+	text-align: center;
+}
