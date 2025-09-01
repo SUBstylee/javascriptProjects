@@ -129,6 +129,7 @@ main {
 	max-height: 100%;
 	transform: translateY(101%);
 	transition: transform 0.5s ease-in;
+	overflow-y: auto;
 }
 
 .movie:hover .overview {
