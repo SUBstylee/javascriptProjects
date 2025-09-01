@@ -3,7 +3,11 @@
 :root {
 	--primary-color: #22254b;
 	--secondary-color: #373b69;
+	--primary-text-color: #fff;
 	--alt-text-color: #7378c5;
+	--movie-good: #90ee90;
+	--movie-ok: #ffa500;
+	--movie-bad: #ff0000;
 }
 
 /* Basic CSS Reset */
@@ -67,4 +71,50 @@ header {
 .search:focus {
 	outline: none;
 	background-color: var(--primary-color);
+}
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.movie {
+	width: 300px;
+	margin: 1rem;
+	background-color: var(--secondary-color);
+	box-shadow: 0 4ps 5px rgba(0, 0, 0, 0.2);
+	position: relative;
+	overflow: hidden;
+	border-radius: 3px;
+}
+
+.movie img {
+	width: 100%;
+}
+
+.movie-info {
+	color: var(--primary-text-color);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.5rem 1rem 1rem;
+	letter-spacing: 0.5px;
+}
+
+.movie-info span {
+	background-color: var(--primary-color);
+	padding: 0.25rem 0.5rem;
+	border-radius: 3px;
+	font-weight: bold;
+}
+
+.movie-info span.good {
+	color: var(--movie-good);
+}
+
+.movie-info span.ok {
+	color: var(--movie-ok);
+}
+.movie-info span.bad {
+	color: var(--movie-bad);
 }
