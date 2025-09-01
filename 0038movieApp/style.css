@@ -42,3 +42,9 @@ h5,
 h6 {
 	overflow-wrap: break-word;
 }
+
+header {
+	padding: 1rem;
+	display: flex;
+	justify-content: flex-end;
+}
