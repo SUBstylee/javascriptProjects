@@ -92,4 +92,17 @@ h6 {
 	top: 50%;
 	transform: translateY(-50%);
 	z-index: 100;
+	cursor: pointer;
+}
+
+.left-arrow {
+	left: calc(15vw - 65px);
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+.right-arrow {
+	right: calc(15vw - 65px);
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
 }
