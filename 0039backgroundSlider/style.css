@@ -82,3 +82,14 @@ h6 {
 .slide.active {
 	opacity: 1;
 }
+
+.arrow {
+	position: fixed;
+	background-color: transparent;
+	padding: 20px;
+	font-size: 30px;
+	border: 2px solid #ffa500;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 100;
+}
