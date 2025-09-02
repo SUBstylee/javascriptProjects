@@ -89,9 +89,9 @@ h6 {
 	padding: 20px;
 	font-size: 30px;
 	border: 2px solid #ffa500;
+	color: #ffa500;
 	top: 50%;
 	transform: translateY(-50%);
-	z-index: 100;
 	cursor: pointer;
 }
 
