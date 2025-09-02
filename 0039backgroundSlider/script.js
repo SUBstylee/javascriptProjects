@@ -1,3 +1,5 @@
 const leftArrow = document.getElementById('left');
 const rightArrow = document.getElementById('right');
-const slides = document.querySelectorAll('slide');
+const slides = document.querySelectorAll('.slide');
+
+slides[0].classList.add('active');
