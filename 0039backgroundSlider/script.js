@@ -1,34 +1,40 @@
+const body = document.body;
 const leftArrow = document.getElementById('left');
 const rightArrow = document.getElementById('right');
 const slides = document.querySelectorAll('.slide');
 
 slides[0].classList.add('active');
-let selectedSlide = 0;
+let activeSlide = 0;
 const nSlides = slides.length;
 
 const toggleActive = () => {
-	slides[selectedSlide].classList.toggle('active');
+	slides[activeSlide].classList.toggle('active');
+};
+
+const setBodyBg = () => {
+	body.style.backgroundImage = slides[activeSlide].style.backgroundImage;
 };
 
 const changeActive = (direction) => {
 	toggleActive();
 	if (direction === 'left') {
-		if (selectedSlide === 0) {
-			selectedSlide = nSlides - 1;
+		if (activeSlide === 0) {
+			activeSlide = nSlides - 1;
 			toggleActive();
 			return;
 		}
-		selectedSlide--;
+		activeSlide--;
 		toggleActive();
 	} else {
-		if (selectedSlide === nSlides - 1) {
-			selectedSlide = 0;
+		if (activeSlide === nSlides - 1) {
+			activeSlide = 0;
 			toggleActive();
 			return;
 		}
-		selectedSlide++;
+		activeSlide++;
 		toggleActive();
 	}
+	setBodyBg();
 };
 
 leftArrow.addEventListener('click', () => changeActive('left'));
