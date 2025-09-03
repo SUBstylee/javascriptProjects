@@ -43,9 +43,27 @@ const setTime = () => {
 	const minutes = time.getMinutes();
 	const seconds = time.getSeconds();
 
-	hourEl.style.transform = `translate(-50%, -100%) rotate(50deg)`;
-	minuteEl.style.transform = `translate(-50%, -100%) rotate(15deg)`;
-	secondEl.style.transform = `translate(-50%, -100%) rotate(100deg)`;
+	hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(
+		hoursForClock,
+		0,
+		11,
+		0,
+		360,
+	)}deg)`;
+	minuteEl.style.transform = `translate(-50%, -100%) rotate(${scale(
+		minutes,
+		0,
+		59,
+		0,
+		360,
+	)}deg)`;
+	secondEl.style.transform = `translate(-50%, -100%) rotate(${scale(
+		seconds,
+		0,
+		59,
+		0,
+		360,
+	)}deg)`;
 };
 
 const toggleDarkMode = (e = null) => {
