@@ -159,4 +159,10 @@
   It allows users to select how many glasses of water they have consumed
   and displays the remaining amount needed to reach their goal.
 
+- [Project 38: Movie App](https://substylee.github.io/javascriptProjects/0038movieApp/index.html)
+
+  A simple movie search application that allows users to search for
+  movies and view their details. It uses the TMDB API to fetch movie
+  data and displays it in a user-friendly interface.
+
 ## More projects will be added soon
