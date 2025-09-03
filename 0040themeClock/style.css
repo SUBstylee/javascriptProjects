@@ -133,3 +133,7 @@ h6 {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+.time {
+	font-size: 60px;
+}
