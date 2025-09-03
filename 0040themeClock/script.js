@@ -64,6 +64,9 @@ const setTime = () => {
 		0,
 		360,
 	)}deg)`;
+	timeEl.innerHTML = `${hoursForClock}:${
+		minutes < 10 ? `0${minutes}` : minutes
+	}:${seconds < 10 ? `0${seconds}` : seconds}`;
 };
 
 const toggleDarkMode = (e = null) => {
@@ -94,3 +97,4 @@ toggle.addEventListener('click', (e) => toggleDarkMode(e));
 toggleDarkMode();
 
 setTime();
+setInterval(setTime, 1000);
