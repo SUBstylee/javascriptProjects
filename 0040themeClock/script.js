@@ -5,3 +5,30 @@ const timeEl = document.querySelector('.time');
 const dateEl = document.querySelector('.date');
 const toggle = document.querySelector('.toggle');
 const html = document.querySelector('html');
+
+const toggleDarkMode = (e = null) => {
+	const colorMode = window.localStorage.getItem('colorMode');
+	if (!e) {
+		if (colorMode === 'dark') {
+			html.classList.add('dark');
+			toggle.innerHTML = 'Light mode';
+		} else {
+			html.classList.remove('dark');
+			toggle.innerHTML = 'Dark mode';
+		}
+		return;
+	}
+	if (html.classList.contains('dark')) {
+		html.classList.remove('dark');
+		toggle.innerHTML = 'Dark mode';
+		window.localStorage.setItem('colorMode', 'light');
+	} else {
+		html.classList.add('dark');
+		toggle.innerHTML = 'Light mode';
+		window.localStorage.setItem('colorMode', 'dark');
+	}
+};
+
+toggle.addEventListener('click', (e) => toggleDarkMode(e));
+
+toggleDarkMode();
