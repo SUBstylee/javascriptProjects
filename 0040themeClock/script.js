@@ -34,6 +34,20 @@ const scale = (num, in_min, in_max, out_min, out_max) => {
 	return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
 };
 
+const setTime = () => {
+	const time = new Date();
+	const month = time.getMonth();
+	const day = time.getDay();
+	const hours = time.getHours();
+	const hoursForClock = hours % 12;
+	const minutes = time.getMinutes();
+	const seconds = time.getSeconds();
+
+	hourEl.style.transform = `translate(-50%, -100%) rotate(50deg)`;
+	minuteEl.style.transform = `translate(-50%, -100%) rotate(15deg)`;
+	secondEl.style.transform = `translate(-50%, -100%) rotate(100deg)`;
+};
+
 const toggleDarkMode = (e = null) => {
 	const colorMode = window.localStorage.getItem('colorMode');
 	if (!e) {
@@ -60,3 +74,5 @@ const toggleDarkMode = (e = null) => {
 toggle.addEventListener('click', (e) => toggleDarkMode(e));
 
 toggleDarkMode();
+
+setTime();
