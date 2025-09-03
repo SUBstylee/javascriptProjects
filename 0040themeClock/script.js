@@ -38,10 +38,12 @@ const setTime = () => {
 	const time = new Date();
 	const month = time.getMonth();
 	const day = time.getDay();
+	const dayOfMonth = time.getDate();
 	const hours = time.getHours();
 	const hoursForClock = hours % 12;
 	const minutes = time.getMinutes();
 	const seconds = time.getSeconds();
+	const amPm = hours >= 12 ? 'PM' : 'AM';
 
 	hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(
 		hoursForClock,
@@ -66,7 +68,8 @@ const setTime = () => {
 	)}deg)`;
 	timeEl.innerHTML = `${hoursForClock}:${
 		minutes < 10 ? `0${minutes}` : minutes
-	}:${seconds < 10 ? `0${seconds}` : seconds}`;
+	}:${seconds < 10 ? `0${seconds}` : seconds} ${amPm}`;
+	dateEl.innerHTML = `${days[day]}, ${months[month]} <span class="circle">${dayOfMonth}</span>`;
 };
 
 const toggleDarkMode = (e = null) => {
