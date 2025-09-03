@@ -165,4 +165,10 @@
   movies and view their details. It uses the TMDB API to fetch movie
   data and displays it in a user-friendly interface.
 
+- [Project 39: Background Slider](https://substylee.github.io/javascriptProjects/0039backgroundSlider/index.html)
+
+  A simple background slider application that allows users to view
+  different background images. It includes navigation arrows to switch
+  between images and uses CSS transitions for a smooth effect.
+
 ## More projects will be added soon
