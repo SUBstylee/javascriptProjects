@@ -1,3 +1,4 @@
+const RIPPLE_DURATION = 500;
 // although there is currently only one button, select as if there are multiple on the page
 const buttons = document.querySelectorAll('.ripple');
 
@@ -13,6 +14,6 @@ buttons.forEach((btn) => {
 
 		btn.appendChild(circle);
 
-		setTimeout(() => circle.remove(), 500);
+		setTimeout(() => circle.remove(), RIPPLE_DURATION);
 	});
 });
