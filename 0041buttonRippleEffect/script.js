@@ -21,5 +21,7 @@ buttons.forEach((btn) => {
 		circle.style.left = btnInnerX + 'px';
 
 		btn.appendChild(circle);
+
+		setTimeout(() => circle.remove(), 500);
 	});
 });
