@@ -171,4 +171,11 @@
   different background images. It includes navigation arrows to switch
   between images and uses CSS transitions for a smooth effect.
 
+- [Project 40: Theme Clock](https://substylee.github.io/javascriptProjects/0040themeClock/index.html)
+
+  A clock application that displays the current time and date. It
+  includes a toggle switch to switch between light and dark themes.
+  Keeps the selected theme even after a page refresh using local
+  storage.
+
 ## More projects will be added soon
