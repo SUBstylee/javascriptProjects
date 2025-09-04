@@ -3,17 +3,8 @@ const buttons = document.querySelectorAll('.ripple');
 
 buttons.forEach((btn) => {
 	btn.addEventListener('click', (e) => {
-		const x = e.clientX;
-		const y = e.clientY;
-		console.log(x, y);
-
-		const btnTop = e.target.offsetTop;
-		const btnLeft = e.target.offsetLeft;
-		console.log(btnTop, btnLeft);
-
-		const btnInnerY = y - btnTop;
-		const btnInnerX = x - btnLeft;
-		console.log(btnInnerY, btnInnerX);
+		const btnInnerY = e.clientY - e.target.offsetTop;
+		const btnInnerX = e.clientX - e.target.offsetLeft;
 
 		const circle = document.createElement('span');
 		circle.classList.add('circle');
