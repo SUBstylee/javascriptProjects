@@ -45,6 +45,7 @@ h6 {
 }
 
 button {
+	position: relative;
 	background-color: #800080;
 	color: #fff;
 	border: 1px solid #800080;
@@ -55,4 +56,15 @@ button {
 	border-radius: 6px;
 	overflow: hidden;
 	margin: 10px 0;
+	cursor: pointer;
+}
+
+button .circle {
+	position: absolute;
+	background-color: #fff;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	animation: scale 0.5s ease-out;
 }
