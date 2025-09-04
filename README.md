@@ -178,4 +178,9 @@
   Keeps the selected theme even after a page refresh using local
   storage.
 
+- [Project 41: Button Ripple Effect](https://substylee.github.io/javascriptProjects/0041buttonRippleEffect/index.html)
+
+  A button with a ripple effect on click using CSS animations. It provides a
+  visual feedback when button(s) are clicked.
+
 ## More projects will be added soon
