@@ -11,8 +11,15 @@ buttons.forEach((btn) => {
 		const btnLeft = e.target.offsetLeft;
 		console.log(btnTop, btnLeft);
 
-		const btnInnerTop = y - btnTop;
-		const btnInnerLeft = x - btnLeft;
-		console.log(btnInnerTop, btnInnerLeft);
+		const btnInnerY = y - btnTop;
+		const btnInnerX = x - btnLeft;
+		console.log(btnInnerY, btnInnerX);
+
+		const circle = document.createElement('span');
+		circle.classList.add('circle');
+		circle.style.top = btnInnerY + 'px';
+		circle.style.left = btnInnerX + 'px';
+
+		btn.appendChild(circle);
 	});
 });
