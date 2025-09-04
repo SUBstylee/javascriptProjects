@@ -10,5 +10,9 @@ buttons.forEach((btn) => {
 		const btnTop = e.target.offsetTop;
 		const btnLeft = e.target.offsetLeft;
 		console.log(btnTop, btnLeft);
+
+		const btnInnerTop = y - btnTop;
+		const btnInnerLeft = x - btnLeft;
+		console.log(btnInnerTop, btnInnerLeft);
 	});
 });
