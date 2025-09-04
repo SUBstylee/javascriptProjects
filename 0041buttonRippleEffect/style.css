@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+:root {
+	--main-btn-color: #800080;
+	--ripple-color: #fff;
+	--text-light: #ddd;
+}
+
 /* Basic CSS Reset */
 * {
 	margin: 0;
@@ -46,9 +52,9 @@ h6 {
 
 button {
 	position: relative;
-	background-color: #800080;
-	color: #fff;
-	border: 1px solid #800080;
+	background-color: var(--main-btn-color);
+	color: var(--text-light);
+	border: 1px solid var(--main-btn-color);
 	font-size: 14px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
@@ -61,12 +67,12 @@ button {
 
 button .circle {
 	position: absolute;
-	background-color: #fff;
+	background-color: var(--ripple-color);
 	width: 100px;
 	height: 100px;
 	border-radius: 50%;
 	transform: translate(-50%, -50%) scale(0);
-	animation: scale 0.5s ease-out forwards;
+	animation: scale 0.8s ease-out forwards;
 	pointer-events: none;
 }
 
