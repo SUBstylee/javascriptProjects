@@ -11,6 +11,6 @@ buttons.forEach((btn) => {
 
 		btn.appendChild(circle);
 
-		setTimeout(() => circle.remove(), RIPPLE_DURATION);
+		circle.addEventListener('animationend', () => circle.remove());
 	});
 });
