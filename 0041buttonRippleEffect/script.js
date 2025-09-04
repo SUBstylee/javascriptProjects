@@ -6,5 +6,9 @@ buttons.forEach((btn) => {
 		const x = e.clientX;
 		const y = e.clientY;
 		console.log(x, y);
+
+		const btnTop = e.target.offsetTop;
+		const btnLeft = e.target.offsetLeft;
+		console.log(btnTop, btnLeft);
 	});
 });
