@@ -3,14 +3,11 @@ const RIPPLE_DURATION = 500;
 const buttons = document.querySelectorAll('.ripple');
 
 buttons.forEach((btn) => {
-	btn.addEventListener('click', (e) => {
-		const btnInnerY = e.clientY - e.target.offsetTop;
-		const btnInnerX = e.clientX - e.target.offsetLeft;
-
+	btn.addEventListener('click', ({ offsetY, offsetX }) => {
 		const circle = document.createElement('span');
 		circle.classList.add('circle');
-		circle.style.top = btnInnerY + 'px';
-		circle.style.left = btnInnerX + 'px';
+		circle.style.top = offsetY + 'px';
+		circle.style.left = offsetX + 'px';
 
 		btn.appendChild(circle);
 
