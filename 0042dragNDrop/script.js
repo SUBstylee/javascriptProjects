@@ -3,10 +3,11 @@ const empties = document.querySelectorAll('.empty');
 
 function dragStart() {
 	this.classList.add('hold');
-	setTimeout(() => (this.className = 'invisible'), 0);
+	setTimeout(() => this.classList.add('invisible'), 0);
 }
 
 function dragEnd() {
+	this.classList.remove('invisible', 'hold');
 	this.className = 'fill';
 }
 
