@@ -183,4 +183,9 @@
   A button with a ripple effect on click using CSS animations. It provides a
   visual feedback when button(s) are clicked.
 
+- [Project 42: Drag and Drop](https://substylee.github.io/javascriptProjects/0042dragNDrop/index.html)
+
+  A drag-and-drop interface that allows users to rearrange an image inside different boxes. It uses the HTML5 Drag and Drop API to enable
+  draggable elements.
+
 ## More projects will be added soon
