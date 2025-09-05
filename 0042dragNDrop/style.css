@@ -1,3 +1,7 @@
+:root {
+	--square-dimensions: 150px;
+}
+
 /* Basic CSS Reset */
 * {
 	margin: 0;
@@ -6,6 +10,7 @@
 }
 
 body {
+	background-color: #4682b4;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -39,7 +44,15 @@ h6 {
 	overflow-wrap: break-word;
 }
 
-@media (max-width: 800px) {
+.empty {
+	height: var(--square-dimensions);
+	width: var(--square-dimensions);
+	margin: 10px;
+	border: 3px solid rgba(0, 0, 0, 0.5);
+	background-color: #fff;
+}
+
+@media (max-width: 870px) {
 	body {
 		flex-direction: column;
 	}
