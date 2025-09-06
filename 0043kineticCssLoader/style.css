@@ -39,3 +39,9 @@ h5,
 h6 {
 	overflow-wrap: break-word;
 }
+
+.kinetic {
+	position: relative;
+	height: 80px;
+	width: 80px;
+}
