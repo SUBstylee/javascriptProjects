@@ -56,8 +56,23 @@ h6 {
 	width: 0;
 	border: 50px solid transparent;
 	border-bottom-color: #fff;
+	animation: rotateA 2s linear infinite 0.5s;
 }
 
 .kinetic::before {
 	transform: rotate(90deg);
+}
+
+@keyframes rotateA {
+	0%,
+	25% {
+		transform: rotate(0deg);
+	}
+	50%,
+	75% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
