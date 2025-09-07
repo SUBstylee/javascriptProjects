@@ -194,4 +194,10 @@
   kinetic effect. It demonstrates the use of CSS animations and
   transformations.
 
+- [Project 44: Toast Notification](https://substylee.github.io/javascriptProjects/0044toastNotification/index.html)
+
+  A toast notification system that displays brief messages to the user.
+  It demonstrates the use of JavaScript for dynamic content creation and
+  CSS for styling notifications.
+
 ## More projects will be added soon
