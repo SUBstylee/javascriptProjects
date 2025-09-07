@@ -53,3 +53,7 @@ h6 {
 	border: none;
 	cursor: pointer;
 }
+
+.btn:active {
+	transform: scale(0.98);
+}
