@@ -188,4 +188,10 @@
   A drag-and-drop interface that allows users to rearrange an image inside different boxes. It uses the HTML5 Drag and Drop API to enable
   draggable elements.
 
+- [Project 43: Kinetic CSS Loader](https://substylee.github.io/javascriptProjects/0043kineticCssLoader/index.html)
+
+  A CSS loader animation that uses keyframe animations to create a
+  kinetic effect. It demonstrates the use of CSS animations and
+  transformations.
+
 ## More projects will be added soon
