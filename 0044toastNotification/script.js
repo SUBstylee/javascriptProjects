@@ -1,2 +1,20 @@
 const toasts = document.getElementById('toasts');
 const button = document.getElementById('button');
+
+const messages = [
+	'Banana phones ring only on Tuesdays.',
+	'Unicorns love pizza with extra cheese.',
+	'My socks are plotting a revolution.',
+	"Don't trust ducks with sunglasses.",
+	"Time flies when you're a potato.",
+	'Cows do calculus at midnight.',
+	'Rainbows taste like bubblegum.',
+	'The moon is made of pancakes.',
+	'Cats secretly run the government.',
+	'Donuts have feelings too.',
+	'Penguins invented the internet.',
+	'Broccoli sings in the shower.',
+	'Coffee mugs dream of tea.',
+	'My shoes can speak French.',
+	'Tacos are afraid of Mondays.',
+];
