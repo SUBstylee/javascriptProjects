@@ -1,6 +1,8 @@
 const toasts = document.getElementById('toasts');
 const button = document.getElementById('button');
 
+const messageTimeout = 5000;
+
 const messages = [
 	'Banana phones ring only on Tuesdays.',
 	'Unicorns love pizza with extra cheese.',
@@ -18,3 +20,19 @@ const messages = [
 	'My shoes can speak French.',
 	'Tacos are afraid of Mondays.',
 ];
+
+const getRandomMessage = () => {
+	return messages[Math.floor(Math.random() * messages.length)];
+};
+
+const createNotification = () => {
+	const notification = document.createElement('div');
+	notification.classList.add('toast');
+	notification.innerText = getRandomMessage();
+	toasts.appendChild(notification);
+	setTimeout(() => {
+		notification.remove();
+	}, messageTimeout);
+};
+
+button.addEventListener('click', () => createNotification());
