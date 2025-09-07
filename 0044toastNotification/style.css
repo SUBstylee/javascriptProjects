@@ -43,3 +43,13 @@ h5,
 h6 {
 	overflow-wrap: break-word;
 }
+
+.btn {
+	background-color: #fff;
+	color: #639;
+	font-weight: bold;
+	padding: 1rem;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+}
