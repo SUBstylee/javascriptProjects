@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+:root {
+	--primary-color: #639;
+}
+
 /* Basic CSS Reset */
 * {
 	margin: 0;
@@ -8,7 +12,7 @@
 }
 
 body {
-	background-color: #639;
+	background-color: var(--primary-color);
 	font-family: Poppins, sans-serif;
 	display: flex;
 	flex-direction: column;
@@ -46,7 +50,7 @@ h6 {
 
 .btn {
 	background-color: #fff;
-	color: #639;
+	color: var(--primary-color);
 	font-weight: bold;
 	padding: 1rem;
 	border-radius: 5px;
@@ -69,8 +73,28 @@ h6 {
 
 .toast {
 	background-color: #fff;
-	color: #639;
+	color: var(--primary-color);
 	border-radius: 5px;
 	padding: 1rem 2rem;
 	margin: 0.5rem;
+}
+
+.regular {
+	color: var(--primary-color);
+}
+
+.success {
+	color: #006400;
+}
+
+.error {
+	color: #f00;
+}
+
+.info {
+	color: #00f;
+}
+
+.warning {
+	color: #ffa500;
 }
