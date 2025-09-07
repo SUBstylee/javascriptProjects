@@ -66,3 +66,11 @@ h6 {
 	flex-direction: column;
 	align-items: flex-end;
 }
+
+.toast {
+	background-color: #fff;
+	color: #639;
+	border-radius: 5px;
+	padding: 1rem 2rem;
+	margin: 0.5rem;
+}
