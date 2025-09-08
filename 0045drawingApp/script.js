@@ -51,3 +51,5 @@ canvas.addEventListener('mousemove', (e) => {
 		y = y2;
 	}
 });
+
+colorEl.addEventListener('change', (e) => (color = e.target.value));
