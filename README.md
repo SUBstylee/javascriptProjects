@@ -200,4 +200,10 @@
   It demonstrates the use of JavaScript for dynamic content creation and
   CSS for styling notifications.
 
+- [Project 45: Drawing App](https://substylee.github.io/javascriptProjects/0045drawingApp/index.html)
+
+  A simple drawing application that allows users to draw on a canvas
+  using different colors and brush sizes. It demonstrates the use of
+  HTML5 Canvas API and event handling.
+
 ## More projects will be added soon
