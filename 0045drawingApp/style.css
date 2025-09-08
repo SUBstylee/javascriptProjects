@@ -42,3 +42,7 @@ h5,
 h6 {
 	overflow-wrap: break-word;
 }
+
+canvas {
+	border: 2px solid #4682b4;
+}
