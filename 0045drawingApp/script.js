@@ -71,3 +71,7 @@ increaseBtn.addEventListener('click', () => {
 	}
 	updateSizeOnScreen();
 });
+
+clearEl.addEventListener('click', () =>
+	ctx.clearRect(0, 0, canvas.width, canvas.height),
+);
