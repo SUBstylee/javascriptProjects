@@ -12,4 +12,6 @@ const getData = () => {
 	header.innerHTML =
 		'<img src="https://picsum.photos/350/200" alt="header image" />';
 	title.innerHTML = 'Lorem ipsum dolor sit amet.';
+	excerpt.innerHTML =
+		'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, nostrum!';
 };
