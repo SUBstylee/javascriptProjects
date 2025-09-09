@@ -7,3 +7,8 @@ const date = document.getElementById('date');
 
 const animated_bgs = document.querySelectorAll('.animated-bg');
 const animated_bg_texts = document.querySelectorAll('.animated-bg-text');
+
+const getData = () => {
+	header.innerHTML =
+		'<img src="https://picsum.photos/350/200" alt="header image" />';
+};
