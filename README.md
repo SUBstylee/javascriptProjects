@@ -206,4 +206,10 @@
   using different colors and brush sizes. It demonstrates the use of
   HTML5 Canvas API and event handling.
 
+- [Project 46: Content Placeholder](https://substylee.github.io/javascriptProjects/0046contentPlaceholder/index.html)
+
+  A content placeholder application that displays skeleton screens while
+  loading content. It demonstrates the use of CSS animations and
+  JavaScript for dynamic content loading.
+
 ## More projects will be added soon
