@@ -2,7 +2,7 @@ const header = document.getElementById('header');
 const title = document.getElementById('title');
 const excerpt = document.getElementById('excerpt');
 const profile_img = document.getElementById('profile_img');
-const name = document.getElementById('name');
+const profile_name = document.getElementById('name');
 const date = document.getElementById('date');
 
 const animated_bgs = document.querySelectorAll('.animated-bg');
@@ -16,6 +16,6 @@ const getData = () => {
 		'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, nostrum!';
 	profile_img.innerHTML =
 		'<img src="https://randomuser.me/api/portraits/women/44.jpg" alt="profile image"/>';
-	name.innerHTML = 'Jane Doe';
+	profile_name.innerHTML = 'Jane Doe';
 	date.innerHTML = 'Sep 09, 2025';
 };
