@@ -68,3 +68,8 @@ img {
 	background-color: #fff;
 	padding: 30px;
 }
+
+.card-excerpt {
+	color: #777;
+	margin: 10px 0 20px;
+}
