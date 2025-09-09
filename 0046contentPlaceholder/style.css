@@ -90,6 +90,7 @@ img {
 	flex-direction: column;
 	justify-content: space-around;
 	margin-left: 10px;
+	width: 30%;
 }
 
 .author-info small {
