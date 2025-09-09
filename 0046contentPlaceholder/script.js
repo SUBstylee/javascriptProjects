@@ -16,4 +16,6 @@ const getData = () => {
 		'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, nostrum!';
 	profile_img.innerHTML =
 		'<img src="https://randomuser.me/api/portraits/women/44.jpg" alt="profile image"/>';
+	name.innerHTML = 'Jane Doe';
+	date.innerHTML = 'Sep 09, 2025';
 };
