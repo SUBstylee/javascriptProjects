@@ -80,6 +80,10 @@ h6 {
 	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
+.nav.active a {
+	color: #000;
+}
+
 .hero {
 	background-image: url('https://images.pexels.com/photos/450035/pexels-photo-450035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
 	background-repeat: no-repeat;
