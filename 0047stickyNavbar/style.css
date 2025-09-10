@@ -44,7 +44,14 @@ h6 {
 	margin: 0 auto;
 }
 
-/* nav */
+.nav {
+	position: fixed;
+	background-color: #222;
+	top: 0;
+	left: 0;
+	right: 0;
+	transition: all 0.3s ease-in-out;
+}
 
 .hero {
 	background-image: url('https://images.pexels.com/photos/450035/pexels-photo-450035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
