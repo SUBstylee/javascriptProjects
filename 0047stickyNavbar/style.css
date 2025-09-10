@@ -61,11 +61,18 @@ h6 {
 	transition: all 0.3s ease-in-out;
 }
 
-nav ul {
+.nav ul {
 	display: flex;
 	list-style-type: none;
 	align-items: center;
 	justify-content: center;
+}
+
+.nav a {
+	color: #fff;
+	text-decoration: none;
+	padding: 7px 15px;
+	transition: all 0.3s ease-in-out;
 }
 
 .hero {
