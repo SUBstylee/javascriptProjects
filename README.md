@@ -212,4 +212,10 @@
   loading content. It demonstrates the use of CSS animations and
   JavaScript for dynamic content loading.
 
+- [Project 47: Sticky Navbar](https://substylee.github.io/javascriptProjects/0047stickyNavbar/index.html)
+
+  A sticky navbar implementation that remains fixed at the top of the
+  page when scrolling. It demonstrates the use of CSS for styling and
+  JavaScript for scroll detection.
+
 ## More projects will be added soon
