@@ -218,4 +218,8 @@
   page when scrolling. It demonstrates the use of CSS for styling and
   JavaScript for scroll detection.
 
+- [Project 48: Double Vertical Slider](https://substylee.github.io/javascriptProjects/0048doubleVerticalSlider/index.html)
+
+  Write description.
+
 ## More projects will be added soon
